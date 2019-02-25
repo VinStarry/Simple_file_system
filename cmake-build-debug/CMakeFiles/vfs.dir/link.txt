@@ -1,0 +1,1 @@
+/usr/bin/gcc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/vfs.dir/src/vfs.c.o  -o ../bin/vfs 

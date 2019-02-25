@@ -1,0 +1,304 @@
+The system is: Darwin - 18.2.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/3.13.0/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_07645/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_07645.dir/build.make CMakeFiles/cmTC_07645.dir/build
+Building C object CMakeFiles/cmTC_07645.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_07645.dir/testCCompiler.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_07645
+/usr/local/Cellar/cmake/3.13.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07645.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_07645.dir/testCCompiler.c.o  -o cmTC_07645 
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5bcd9/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_5bcd9.dir/build.make CMakeFiles/cmTC_5bcd9.dir/build
+Building C object CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.13.0/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_5bcd9
+/usr/local/Cellar/cmake/3.13.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bcd9.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o  -o cmTC_5bcd9 
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin18.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_5bcd9 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-409.12
+BUILD 17:47:51 Sep 25 2018
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_5bcd9/fast"]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_5bcd9.dir/build.make CMakeFiles/cmTC_5bcd9.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.13.0/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_5bcd9]
+  ignore line: [/usr/local/Cellar/cmake/3.13.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bcd9.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o  -o cmTC_5bcd9 ]
+  ignore line: [Apple LLVM version 10.0.0 (clang-1000.10.44.4)]
+  ignore line: [Target: x86_64-apple-darwin18.2.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_5bcd9 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.14.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_5bcd9] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_5bcd9.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4d788/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4d788.dir/build.make CMakeFiles/cmTC_4d788.dir/build
+Building C object CMakeFiles/cmTC_4d788.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c11 -o CMakeFiles/cmTC_4d788.dir/feature_tests.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_4d788
+/usr/local/Cellar/cmake/3.13.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d788.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_4d788.dir/feature_tests.c.o  -o cmTC_4d788 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c4218/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c4218.dir/build.make CMakeFiles/cmTC_c4218.dir/build
+Building C object CMakeFiles/cmTC_c4218.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c99 -o CMakeFiles/cmTC_c4218.dir/feature_tests.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_c4218
+/usr/local/Cellar/cmake/3.13.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4218.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c4218.dir/feature_tests.c.o  -o cmTC_c4218 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_39834/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_39834.dir/build.make CMakeFiles/cmTC_39834.dir/build
+Building C object CMakeFiles/cmTC_39834.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c90 -o CMakeFiles/cmTC_39834.dir/feature_tests.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_39834
+/usr/local/Cellar/cmake/3.13.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39834.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_39834.dir/feature_tests.c.o  -o cmTC_39834 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+The system is: Darwin - 18.2.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/3.13.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7019c/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_7019c.dir/build.make CMakeFiles/cmTC_7019c.dir/build
+Building C object CMakeFiles/cmTC_7019c.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_7019c.dir/testCCompiler.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_7019c
+"/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_7019c.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_7019c.dir/testCCompiler.c.o  -o cmTC_7019c 
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9d016/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9d016.dir/build.make CMakeFiles/cmTC_9d016.dir/build
+Building C object CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o   -c "/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/share/cmake-3.13/Modules/CMakeCCompilerABI.c"
+Linking C executable cmTC_9d016
+"/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_9d016.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o  -o cmTC_9d016 
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin18.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_9d016 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-409.12
+BUILD 17:47:51 Sep 25 2018
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_9d016/fast"]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9d016.dir/build.make CMakeFiles/cmTC_9d016.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o   -c "/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/share/cmake-3.13/Modules/CMakeCCompilerABI.c"]
+  ignore line: [Linking C executable cmTC_9d016]
+  ignore line: ["/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_9d016.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o  -o cmTC_9d016 ]
+  ignore line: [Apple LLVM version 10.0.0 (clang-1000.10.44.4)]
+  ignore line: [Target: x86_64-apple-darwin18.2.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_9d016 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.14.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_9d016] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_9d016.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4b57b/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4b57b.dir/build.make CMakeFiles/cmTC_4b57b.dir/build
+Building C object CMakeFiles/cmTC_4b57b.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c11 -o CMakeFiles/cmTC_4b57b.dir/feature_tests.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_4b57b
+"/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_4b57b.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_4b57b.dir/feature_tests.c.o  -o cmTC_4b57b 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_09428/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_09428.dir/build.make CMakeFiles/cmTC_09428.dir/build
+Building C object CMakeFiles/cmTC_09428.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c99 -o CMakeFiles/cmTC_09428.dir/feature_tests.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_09428
+"/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_09428.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_09428.dir/feature_tests.c.o  -o cmTC_09428 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fd483/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_fd483.dir/build.make CMakeFiles/cmTC_fd483.dir/build
+Building C object CMakeFiles/cmTC_fd483.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c90 -o CMakeFiles/cmTC_fd483.dir/feature_tests.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/feature_tests.c
+Linking C executable cmTC_fd483
+"/Users/yongxinxu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_fd483.dir/link.txt --verbose=1
+/usr/bin/gcc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fd483.dir/feature_tests.c.o  -o cmTC_fd483 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
