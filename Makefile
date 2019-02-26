@@ -123,6 +123,87 @@ vfs/fast:
 	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/build
 .PHONY : vfs/fast
 
+src/dentry.o: src/dentry.c.o
+
+.PHONY : src/dentry.o
+
+# target to build an object file
+src/dentry.c.o:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/dentry.c.o
+.PHONY : src/dentry.c.o
+
+src/dentry.i: src/dentry.c.i
+
+.PHONY : src/dentry.i
+
+# target to preprocess a source file
+src/dentry.c.i:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/dentry.c.i
+.PHONY : src/dentry.c.i
+
+src/dentry.s: src/dentry.c.s
+
+.PHONY : src/dentry.s
+
+# target to generate assembly for a file
+src/dentry.c.s:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/dentry.c.s
+.PHONY : src/dentry.c.s
+
+src/inode.o: src/inode.c.o
+
+.PHONY : src/inode.o
+
+# target to build an object file
+src/inode.c.o:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/inode.c.o
+.PHONY : src/inode.c.o
+
+src/inode.i: src/inode.c.i
+
+.PHONY : src/inode.i
+
+# target to preprocess a source file
+src/inode.c.i:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/inode.c.i
+.PHONY : src/inode.c.i
+
+src/inode.s: src/inode.c.s
+
+.PHONY : src/inode.s
+
+# target to generate assembly for a file
+src/inode.c.s:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/inode.c.s
+.PHONY : src/inode.c.s
+
+src/super_block.o: src/super_block.c.o
+
+.PHONY : src/super_block.o
+
+# target to build an object file
+src/super_block.c.o:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/super_block.c.o
+.PHONY : src/super_block.c.o
+
+src/super_block.i: src/super_block.c.i
+
+.PHONY : src/super_block.i
+
+# target to preprocess a source file
+src/super_block.c.i:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/super_block.c.i
+.PHONY : src/super_block.c.i
+
+src/super_block.s: src/super_block.c.s
+
+.PHONY : src/super_block.s
+
+# target to generate assembly for a file
+src/super_block.c.s:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/super_block.c.s
+.PHONY : src/super_block.c.s
+
 src/user.o: src/user.c.o
 
 .PHONY : src/user.o
@@ -150,32 +231,32 @@ src/user.c.s:
 	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/user.c.s
 .PHONY : src/user.c.s
 
-src/vfs.o: src/vfs.c.o
+vfs.o: vfs.c.o
 
-.PHONY : src/vfs.o
+.PHONY : vfs.o
 
 # target to build an object file
-src/vfs.c.o:
-	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/vfs.c.o
-.PHONY : src/vfs.c.o
+vfs.c.o:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/vfs.c.o
+.PHONY : vfs.c.o
 
-src/vfs.i: src/vfs.c.i
+vfs.i: vfs.c.i
 
-.PHONY : src/vfs.i
+.PHONY : vfs.i
 
 # target to preprocess a source file
-src/vfs.c.i:
-	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/vfs.c.i
-.PHONY : src/vfs.c.i
+vfs.c.i:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/vfs.c.i
+.PHONY : vfs.c.i
 
-src/vfs.s: src/vfs.c.s
+vfs.s: vfs.c.s
 
-.PHONY : src/vfs.s
+.PHONY : vfs.s
 
 # target to generate assembly for a file
-src/vfs.c.s:
-	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/vfs.c.s
-.PHONY : src/vfs.c.s
+vfs.c.s:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/vfs.c.s
+.PHONY : vfs.c.s
 
 # Help Target
 help:
@@ -186,12 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... vfs"
+	@echo "... src/dentry.o"
+	@echo "... src/dentry.i"
+	@echo "... src/dentry.s"
+	@echo "... src/inode.o"
+	@echo "... src/inode.i"
+	@echo "... src/inode.s"
+	@echo "... src/super_block.o"
+	@echo "... src/super_block.i"
+	@echo "... src/super_block.s"
 	@echo "... src/user.o"
 	@echo "... src/user.i"
 	@echo "... src/user.s"
-	@echo "... src/vfs.o"
-	@echo "... src/vfs.i"
-	@echo "... src/vfs.s"
+	@echo "... vfs.o"
+	@echo "... vfs.i"
+	@echo "... vfs.s"
 .PHONY : help
 
 

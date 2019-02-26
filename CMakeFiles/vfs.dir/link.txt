@@ -1,1 +1,1 @@
-/usr/bin/gcc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/vfs.dir/src/user.c.o CMakeFiles/vfs.dir/src/vfs.c.o  -o bin/vfs 
+/usr/bin/gcc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/vfs.dir/vfs.c.o CMakeFiles/vfs.dir/src/dentry.c.o CMakeFiles/vfs.dir/src/inode.c.o CMakeFiles/vfs.dir/src/super_block.c.o CMakeFiles/vfs.dir/src/user.c.o  -o vfs 

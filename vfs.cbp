@@ -38,8 +38,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="vfs">
-				<Option output="/Users/yongxinxu/Desktop/Projects/vfs/bin/vfs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/yongxinxu/Desktop/Projects/vfs/bin"/>
+				<Option output="/Users/yongxinxu/Desktop/Projects/vfs/vfs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yongxinxu/Desktop/Projects/vfs"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,8 +54,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="vfs/fast">
-				<Option output="/Users/yongxinxu/Desktop/Projects/vfs/bin/vfs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/yongxinxu/Desktop/Projects/vfs/bin"/>
+				<Option output="/Users/yongxinxu/Desktop/Projects/vfs/vfs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yongxinxu/Desktop/Projects/vfs"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -70,13 +70,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/linked_list.c">
+		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/dentry.c">
+			<Option target="vfs"/>
+		</Unit>
+		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/inode.c">
+			<Option target="vfs"/>
+		</Unit>
+		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c">
 			<Option target="vfs"/>
 		</Unit>
 		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/user.c">
 			<Option target="vfs"/>
 		</Unit>
-		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/vfs.c">
+		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/vfs.c">
 			<Option target="vfs"/>
 		</Unit>
 		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/CMakeLists.txt">

@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/vfs.dir/vfs.c.o"
+  "CMakeFiles/vfs.dir/src/dentry.c.o"
+  "CMakeFiles/vfs.dir/src/inode.c.o"
+  "CMakeFiles/vfs.dir/src/super_block.c.o"
   "CMakeFiles/vfs.dir/src/user.c.o"
-  "CMakeFiles/vfs.dir/src/vfs.c.o"
-  "bin/vfs.pdb"
-  "bin/vfs"
+  "vfs.pdb"
+  "vfs"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -4,8 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/yongxinxu/Desktop/Projects/vfs/src/dentry.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/dentry.c.o"
+  "/Users/yongxinxu/Desktop/Projects/vfs/src/inode.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/inode.c.o"
+  "/Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/super_block.c.o"
   "/Users/yongxinxu/Desktop/Projects/vfs/src/user.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/user.c.o"
-  "/Users/yongxinxu/Desktop/Projects/vfs/src/vfs.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/vfs.c.o"
+  "/Users/yongxinxu/Desktop/Projects/vfs/vfs.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/vfs.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
