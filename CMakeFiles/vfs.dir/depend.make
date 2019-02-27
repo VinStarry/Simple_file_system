@@ -34,6 +34,7 @@ CMakeFiles/vfs.dir/src/user.c.o: src/user.c
 
 CMakeFiles/vfs.dir/vfs.c.o: vfs.c
 CMakeFiles/vfs.dir/vfs.c.o: include/data_structures.h
+CMakeFiles/vfs.dir/vfs.c.o: include/dentry.h
 CMakeFiles/vfs.dir/vfs.c.o: include/inode.h
 CMakeFiles/vfs.dir/vfs.c.o: include/instruction_handle.h
 CMakeFiles/vfs.dir/vfs.c.o: include/super_block.h

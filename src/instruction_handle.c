@@ -30,8 +30,3 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
         rtn = __error_instr;
     return rtn;
 }
-
-void swap_user_handler(struct usr_ptr *current_user) {
-    char usr_name[USER_NAME_MAX_LEN];
-    scanf("%s", usr_name);
-}

@@ -7,4 +7,7 @@
 
 #include "data_structures.h"
 
+bool save_entry(struct dentry *root);
+bool load_entry(struct dentry *root);
+
 #endif //VFS_DENTRY_H

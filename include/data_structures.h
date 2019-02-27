@@ -5,7 +5,7 @@
 #ifndef VFS_DATA_STRUCTURES_H
 #define VFS_DATA_STRUCTURES_H
 
-#define DNAME_LEN
+#define DNAME_LEN 100
 
 typedef unsigned uid_t;
 typedef unsigned long blkcnt_t;
@@ -13,6 +13,12 @@ typedef unsigned short u_mode_t;
 
 #include "trival_helper.h"
 #include "user.h"
+
+enum d_type {
+    __directory = 'd',
+    __link = 'l',
+    __file = 'f'
+};
 
 struct blk_lists {
     blkcnt_t blk_no;
@@ -44,7 +50,7 @@ struct dentry {
     char type;
     struct inode *d_inode;
     struct hash_table *subdirs;
-    unsigned long d_time;
+    struct tm *d_time;
     struct super_block *d_sb;
     struct dentry *parent;
     char d_iname[DNAME_LEN];

@@ -2,19 +2,23 @@
 #include "data_structures.h"
 #include "user.h"
 #include "super_block.h"
+#include "dentry.h"
 #include "../include/instruction_handle.h"
 
 struct usr_ptr *current_usr = NULL;
+struct dentry *root_dir = NULL;
 
 int main(int argc, const char *argv[]) {
     struct super_block *sb = NULL;
+    root_dir = (struct dentry *)malloc(sizeof(struct dentry));
     if (argc == 1) {
-        sb = load_block();
+        sb = load_block(root_dir);
     }
     else {
-        sb = init_block();
+        sb = init_block(root_dir);
     }
     struct user_linked_list *head = load_users_info();
+    load_entry(root_dir);
     current_usr = (struct usr_ptr *)malloc(sizeof(current_usr));
 
     char init_user_name[USER_NAME_MAX_LEN];
@@ -66,6 +70,7 @@ int main(int argc, const char *argv[]) {
     save_users_info(head);
     free_user_info(head);
     save_block(sb);
+    save_entry(root_dir);
     free_block(sb);
     fflush(stdin);
     return 0;

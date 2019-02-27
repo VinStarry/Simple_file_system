@@ -6,7 +6,7 @@
 
 const char * const save_path = "./data/blk_data.dat";
 
-struct super_block *init_block(void) {
+struct super_block *init_block(struct dentry *root) {
     struct super_block *sb = (struct super_block *)malloc(sizeof(struct super_block));
     sb->s_bdev = (char *)malloc(sizeof(char) * BLK_NUM * BLK_SIZE);
     sb->s_blocknumbers = BLK_NUM;
@@ -14,6 +14,14 @@ struct super_block *init_block(void) {
     sb->s_bitmap_blks = (int)(BLK_NUM * 1.0 / BLK_SIZE / 8 + 0.5);
     sb->s_inodes = NULL;
     sb->s_inodes_num = 0;
+
+    root->parent = NULL;
+    root->type = __directory;
+    root->d_time = get_local_time();
+    root->d_sb = sb;
+    strcpy(root->d_iname, "/");
+    root->d_inode = alloc_inode(sb);
+    root->subdirs = NULL;
     unsigned long offset = 0;
     memcpy(sb->s_bdev + offset, &sb->s_blocknumbers, sizeof(unsigned long));
     offset += sizeof(unsigned long);
@@ -65,7 +73,7 @@ bool save_block(struct super_block *sb) {
     return true;
 }
 
-struct super_block *load_block(void) {
+struct super_block *load_block(struct dentry *root) {
     FILE *fp = fopen(save_path, "rb");
     if (!fp)
         return NULL;
@@ -83,8 +91,14 @@ struct super_block *load_block(void) {
     memcpy(&sb->s_inodes_num, sb->s_bdev + offset, sizeof(unsigned long));
     offset += sizeof(unsigned long);
 
-    if (sb->s_inodes_num == 0)
-        sb->s_inodes = NULL;
+    sb->s_inodes = NULL;
+
+    root->parent = NULL;
+    root->type = __directory;
+    root->d_sb = sb;
+    root->d_inode = alloc_inode(sb);
+    root->subdirs = NULL;
+
     return sb;
 }
 

@@ -22,6 +22,5 @@ enum INSTR_TYPE {
 typedef int instr_type;
 
 instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]);
-void swap_user_handler(struct usr_ptr *current_user);
 
 #endif //VFS_INSTRUCTION_HANDLE_H

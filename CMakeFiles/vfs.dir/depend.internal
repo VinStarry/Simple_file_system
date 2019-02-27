@@ -35,6 +35,7 @@ CMakeFiles/vfs.dir/src/user.c.o
 CMakeFiles/vfs.dir/vfs.c.o
  /Users/yongxinxu/Desktop/Projects/vfs/vfs.c
  include/data_structures.h
+ include/dentry.h
  include/inode.h
  include/instruction_handle.h
  include/super_block.h

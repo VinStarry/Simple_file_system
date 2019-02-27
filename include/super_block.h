@@ -14,10 +14,10 @@
 #define BLK_SIZE 1024
 #define BLK_NUM 102400
 
-struct super_block *init_block(void);
+struct super_block *init_block(struct dentry *root);
 struct super_block *free_block(struct super_block *sb);
 bool save_block(struct super_block *sb);
-struct super_block *load_block(void);
+struct super_block *load_block(struct dentry *root);
 struct inode *alloc_inode(struct super_block *sb);
 void destroy_inode(struct inode *inode);
 size_t write_block(struct super_block *sb, unsigned long block_no, char *stream, size_t size);
