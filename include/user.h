@@ -13,6 +13,12 @@
 #define USER_NAME_MAX_LEN 50
 #define USER_PSW_MAX_LEN 50
 
+struct usr_ptr {
+    unsigned int u_id;
+    char *name;
+    unsigned int priority;
+};
+
 struct user_linked_list {
     unsigned int u_id;
     char *name;
@@ -28,5 +34,8 @@ struct user_linked_list *load_users_info(void);
 bool save_users_info(struct user_linked_list *usr_list_head);
 void print_user_info(struct user_linked_list *usr_list_head);
 void free_user_info(struct user_linked_list *usr_list_head);
+
+bool get_user_by_name(struct user_linked_list *user_list, struct usr_ptr *current_user, const char *name);
+void print_current_user_info(struct usr_ptr *info);
 
 #endif //VFS_USER_H

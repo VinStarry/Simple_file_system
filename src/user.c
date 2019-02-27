@@ -136,3 +136,48 @@ void free_user_info(struct user_linked_list *usr_list_head) {
         usr_list_head = ptr;
     }
 }
+
+bool get_user_by_name(struct user_linked_list *user_list, struct usr_ptr *current_user, const char *name) {
+    struct user_linked_list *ptr = user_list;
+    bool found = false;
+    char psw[USER_PSW_MAX_LEN];
+    while (ptr) {
+        ptr = ptr->next;
+        if (ptr) {
+            if (!strcmp(ptr->name, name)) {
+                if (ptr->priority < 2) {
+                    printf("input password of %s\n", ptr->name);
+                    fgets(psw, USER_PSW_MAX_LEN, stdin);
+                    psw[strlen(psw) - 1] = '\0';
+                    if (!strcmp(psw, ptr->psw)) {
+                        current_user->name = ptr->name;
+                        current_user->priority = ptr->priority;
+                        current_user->u_id = ptr->u_id;
+                        found = true;
+                        break;
+                    }
+                    else {
+                        printf("%s\n", "sorry, try again!");
+                        return found;
+                    }
+                }
+                else {
+                    current_user->name = ptr->name;
+                    current_user->priority = ptr->priority;
+                    current_user->u_id = ptr->u_id;
+                    found = true;
+                    break;
+                }
+            }
+        }
+    }
+    if (!found)
+        printf("soort, didn't found user: %s\n", name);
+    return found;
+}
+
+void print_current_user_info(struct usr_ptr *info) {
+    if (info) {
+        printf("%d\t%s\t%d" ,info->u_id, info->name, info->priority);
+    }
+}

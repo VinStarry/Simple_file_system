@@ -177,6 +177,33 @@ src/inode.c.s:
 	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/inode.c.s
 .PHONY : src/inode.c.s
 
+src/instruction_handle.o: src/instruction_handle.c.o
+
+.PHONY : src/instruction_handle.o
+
+# target to build an object file
+src/instruction_handle.c.o:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/instruction_handle.c.o
+.PHONY : src/instruction_handle.c.o
+
+src/instruction_handle.i: src/instruction_handle.c.i
+
+.PHONY : src/instruction_handle.i
+
+# target to preprocess a source file
+src/instruction_handle.c.i:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/instruction_handle.c.i
+.PHONY : src/instruction_handle.c.i
+
+src/instruction_handle.s: src/instruction_handle.c.s
+
+.PHONY : src/instruction_handle.s
+
+# target to generate assembly for a file
+src/instruction_handle.c.s:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/instruction_handle.c.s
+.PHONY : src/instruction_handle.c.s
+
 src/super_block.o: src/super_block.c.o
 
 .PHONY : src/super_block.o
@@ -203,6 +230,33 @@ src/super_block.s: src/super_block.c.s
 src/super_block.c.s:
 	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/super_block.c.s
 .PHONY : src/super_block.c.s
+
+src/trival_helper.o: src/trival_helper.c.o
+
+.PHONY : src/trival_helper.o
+
+# target to build an object file
+src/trival_helper.c.o:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/trival_helper.c.o
+.PHONY : src/trival_helper.c.o
+
+src/trival_helper.i: src/trival_helper.c.i
+
+.PHONY : src/trival_helper.i
+
+# target to preprocess a source file
+src/trival_helper.c.i:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/trival_helper.c.i
+.PHONY : src/trival_helper.c.i
+
+src/trival_helper.s: src/trival_helper.c.s
+
+.PHONY : src/trival_helper.s
+
+# target to generate assembly for a file
+src/trival_helper.c.s:
+	$(MAKE) -f CMakeFiles/vfs.dir/build.make CMakeFiles/vfs.dir/src/trival_helper.c.s
+.PHONY : src/trival_helper.c.s
 
 src/user.o: src/user.c.o
 
@@ -273,9 +327,15 @@ help:
 	@echo "... src/inode.o"
 	@echo "... src/inode.i"
 	@echo "... src/inode.s"
+	@echo "... src/instruction_handle.o"
+	@echo "... src/instruction_handle.i"
+	@echo "... src/instruction_handle.s"
 	@echo "... src/super_block.o"
 	@echo "... src/super_block.i"
 	@echo "... src/super_block.s"
+	@echo "... src/trival_helper.o"
+	@echo "... src/trival_helper.i"
+	@echo "... src/trival_helper.s"
 	@echo "... src/user.o"
 	@echo "... src/user.i"
 	@echo "... src/user.s"

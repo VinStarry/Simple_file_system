@@ -96,9 +96,22 @@ CMakeFiles/vfs.dir/src/inode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vfs.dir/src/inode.c.s"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yongxinxu/Desktop/Projects/vfs/src/inode.c -o CMakeFiles/vfs.dir/src/inode.c.s
 
+CMakeFiles/vfs.dir/src/instruction_handle.c.o: CMakeFiles/vfs.dir/flags.make
+CMakeFiles/vfs.dir/src/instruction_handle.c.o: src/instruction_handle.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/vfs.dir/src/instruction_handle.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/vfs.dir/src/instruction_handle.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c
+
+CMakeFiles/vfs.dir/src/instruction_handle.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vfs.dir/src/instruction_handle.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c > CMakeFiles/vfs.dir/src/instruction_handle.c.i
+
+CMakeFiles/vfs.dir/src/instruction_handle.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vfs.dir/src/instruction_handle.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c -o CMakeFiles/vfs.dir/src/instruction_handle.c.s
+
 CMakeFiles/vfs.dir/src/super_block.c.o: CMakeFiles/vfs.dir/flags.make
 CMakeFiles/vfs.dir/src/super_block.c.o: src/super_block.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/vfs.dir/src/super_block.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/vfs.dir/src/super_block.c.o"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/vfs.dir/src/super_block.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c
 
 CMakeFiles/vfs.dir/src/super_block.c.i: cmake_force
@@ -109,9 +122,22 @@ CMakeFiles/vfs.dir/src/super_block.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vfs.dir/src/super_block.c.s"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c -o CMakeFiles/vfs.dir/src/super_block.c.s
 
+CMakeFiles/vfs.dir/src/trival_helper.c.o: CMakeFiles/vfs.dir/flags.make
+CMakeFiles/vfs.dir/src/trival_helper.c.o: src/trival_helper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/vfs.dir/src/trival_helper.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/vfs.dir/src/trival_helper.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c
+
+CMakeFiles/vfs.dir/src/trival_helper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vfs.dir/src/trival_helper.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c > CMakeFiles/vfs.dir/src/trival_helper.c.i
+
+CMakeFiles/vfs.dir/src/trival_helper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vfs.dir/src/trival_helper.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c -o CMakeFiles/vfs.dir/src/trival_helper.c.s
+
 CMakeFiles/vfs.dir/src/user.c.o: CMakeFiles/vfs.dir/flags.make
 CMakeFiles/vfs.dir/src/user.c.o: src/user.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/vfs.dir/src/user.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/vfs.dir/src/user.c.o"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/vfs.dir/src/user.c.o   -c /Users/yongxinxu/Desktop/Projects/vfs/src/user.c
 
 CMakeFiles/vfs.dir/src/user.c.i: cmake_force
@@ -127,7 +153,9 @@ vfs_OBJECTS = \
 "CMakeFiles/vfs.dir/vfs.c.o" \
 "CMakeFiles/vfs.dir/src/dentry.c.o" \
 "CMakeFiles/vfs.dir/src/inode.c.o" \
+"CMakeFiles/vfs.dir/src/instruction_handle.c.o" \
 "CMakeFiles/vfs.dir/src/super_block.c.o" \
+"CMakeFiles/vfs.dir/src/trival_helper.c.o" \
 "CMakeFiles/vfs.dir/src/user.c.o"
 
 # External object files for target vfs
@@ -136,11 +164,13 @@ vfs_EXTERNAL_OBJECTS =
 vfs: CMakeFiles/vfs.dir/vfs.c.o
 vfs: CMakeFiles/vfs.dir/src/dentry.c.o
 vfs: CMakeFiles/vfs.dir/src/inode.c.o
+vfs: CMakeFiles/vfs.dir/src/instruction_handle.c.o
 vfs: CMakeFiles/vfs.dir/src/super_block.c.o
+vfs: CMakeFiles/vfs.dir/src/trival_helper.c.o
 vfs: CMakeFiles/vfs.dir/src/user.c.o
 vfs: CMakeFiles/vfs.dir/build.make
 vfs: CMakeFiles/vfs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable vfs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable vfs"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vfs.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -6,7 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/yongxinxu/Desktop/Projects/vfs/src/dentry.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/dentry.c.o"
   "/Users/yongxinxu/Desktop/Projects/vfs/src/inode.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/inode.c.o"
+  "/Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/instruction_handle.c.o"
   "/Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/super_block.c.o"
+  "/Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/trival_helper.c.o"
   "/Users/yongxinxu/Desktop/Projects/vfs/src/user.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/src/user.c.o"
   "/Users/yongxinxu/Desktop/Projects/vfs/vfs.c" "/Users/yongxinxu/Desktop/Projects/vfs/CMakeFiles/vfs.dir/vfs.c.o"
   )
