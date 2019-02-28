@@ -6,6 +6,7 @@
 #define VFS_DATA_STRUCTURES_H
 
 #define DNAME_LEN 100
+#define HASH_TABLE_ROW 10
 
 typedef unsigned uid_t;
 typedef unsigned long blkcnt_t;
@@ -17,7 +18,7 @@ typedef unsigned short u_mode_t;
 enum d_type {
     __directory = 'd',
     __link = 'l',
-    __file = 'f'
+    __file = '-'
 };
 
 struct blk_lists {
@@ -26,11 +27,23 @@ struct blk_lists {
     struct blk_lists *next_blk;
 };
 
+typedef struct ___dentry__list {
+    struct dentry *dir;
+    struct ___dentry__list *next;
+}dlist;
+
+struct dir_hash_table {
+    int hash_key;
+    char *dname;
+    struct dentry *corres_dentry;
+    struct dir_hash_table *next;
+};
+
 struct super_block {
     unsigned long s_blocknumbers;   // 块的总数量
     unsigned long s_blocksize;      // 块的大小
-    struct inode_linked_list *s_inodes; // 超级块的i节点链表
-    unsigned long s_inodes_num;     // 已经被申请的inode数量
+//    struct inode_linked_list *s_inodes; // 超级块的空闲inode链表
+//    unsigned long s_inodes_num;     // 空闲inode数量
     void *s_bdev;       // 存储块
     int s_bitmap_blks;  // 位示图的块数量
 };
@@ -49,7 +62,7 @@ struct inode {
 struct dentry {
     char type;
     struct inode *d_inode;
-    struct hash_table *subdirs;
+    struct dir_hash_table *subdirs[HASH_TABLE_ROW];
     struct tm *d_time;
     struct super_block *d_sb;
     struct dentry *parent;

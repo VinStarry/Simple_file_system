@@ -6,6 +6,52 @@
 
 #IncludeRegexTransform: 
 
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+trival_helper.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/trival_helper.h
+user.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/user.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/include/dentry.h
+data_structures.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/include/instruction_handle.h
+string.h
+-
+data_structures.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+user.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/user.h
+dentry.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/dentry.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/include/trival_helper.h
+time.h
+-
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+data_structures.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/include/user.h
+stdlib.h
+-
+stdbool.h
+-
+stdio.h
+-
+string.h
+-
+
+/Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c
+../include/instruction_handle.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/instruction_handle.h
+
 /Users/yongxinxu/Desktop/Projects/vfs/vfs.c
 stdio.h
 -
@@ -43,6 +89,8 @@ data_structures.h
 include/data_structures.h
 user.h
 include/user.h
+dentry.h
+include/dentry.h
 
 include/super_block.h
 stdio.h
@@ -55,12 +103,20 @@ stdbool.h
 include/data_structures.h
 ../include/inode.h
 include/inode.h
+../include/dentry.h
+include/dentry.h
 
 include/trival_helper.h
 time.h
 -
 stdio.h
 -
+stdbool.h
+-
+stdlib.h
+-
+data_structures.h
+include/data_structures.h
 
 include/user.h
 stdlib.h

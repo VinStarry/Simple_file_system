@@ -4,6 +4,30 @@
 
 #include "../include/trival_helper.h"
 
+const char char_mask = 0x01;
+
+inline bool test_bit_char(char byte, int num) {
+    if (num > (sizeof(char) * 8 - 1) || num < 0)
+        return false;
+    char test = char_mask << num;
+    char test2 = byte & test;
+    return ((test2 >> num) & char_mask);
+}
+
+inline char fill_bit_char(char byte, int num) {
+    if (num > (sizeof(char) * 8 - 1) || num < 0)
+        return 0;
+    char rtn = byte | (char_mask << num);
+    return rtn;
+}
+
+inline char release_bit_char(char byte, int num) {
+    if (num > (sizeof(char) * 8 - 1) || num < 0)
+        return 0;
+    char rtn = byte & ~(char_mask << num);
+    return rtn;
+}
+
 struct tm* get_local_time(void) {
     time_t t;
     struct tm * lt;
@@ -15,3 +39,6 @@ struct tm* get_local_time(void) {
 void print_time(struct tm* lt) {
     printf ( "%d/%d/%d %d:%d:%d\n",lt->tm_year+1900, lt->tm_mon, lt->tm_mday, lt->tm_hour, lt->tm_min, lt->tm_sec);
 }
+
+
+

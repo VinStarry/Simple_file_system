@@ -76,7 +76,13 @@
 		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/inode.c">
 			<Option target="vfs"/>
 		</Unit>
+		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c">
+			<Option target="vfs"/>
+		</Unit>
 		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c">
+			<Option target="vfs"/>
+		</Unit>
+		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c">
 			<Option target="vfs"/>
 		</Unit>
 		<Unit filename="/Users/yongxinxu/Desktop/Projects/vfs/src/user.c">

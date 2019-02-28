@@ -5,10 +5,44 @@
 #include "dentry.h"
 #include "../include/instruction_handle.h"
 
+//#define __debug_mode
+
 struct usr_ptr *current_usr = NULL;
 struct dentry *root_dir = NULL;
+struct dentry *current_dir = NULL;
+dlist *usr_dir_list = NULL;
 
 int main(int argc, const char *argv[]) {
+
+#ifdef __debug_mode
+    root_dir = (struct dentry *)malloc(sizeof(struct dentry));
+    root_dir->d_inode = NULL;
+    struct super_block *sb = load_block(root_dir);
+    struct user_linked_list *head = load_users_info();
+    load_entry(root_dir);
+
+//    struct inode *inode1 = (struct inode *)malloc(sizeof(struct inode));
+//    alloc_block_for_inode(sb, inode1);
+//    alloc_block_for_inode(sb, inode1);
+//    alloc_block_for_inode(sb, inode1);
+//    alloc_block_for_inode(sb, inode1);
+//
+//    free_block_for_inode(sb, inode1);
+//    free_block_for_inode(sb, inode1);
+//    free_block_for_inode(sb, inode1);
+//    free_block_for_inode(sb, inode1);
+//    alloc_block_for_inode(sb);
+//    alloc_data_block(sb);
+
+    save_users_info(head);
+    free_user_info(head);
+//    save_block(sb);
+//    save_entry(root_dir);
+    free_block(sb);
+    fflush(stdin);
+#endif
+
+#ifndef __debug_mode
     struct super_block *sb = NULL;
     root_dir = (struct dentry *)malloc(sizeof(struct dentry));
     if (argc == 1) {
@@ -19,7 +53,12 @@ int main(int argc, const char *argv[]) {
     }
     struct user_linked_list *head = load_users_info();
     load_entry(root_dir);
+
     current_usr = (struct usr_ptr *)malloc(sizeof(current_usr));
+    current_dir = root_dir;
+
+    usr_dir_list = init_dlist();
+    packet_user_dlist(usr_dir_list, head, root_dir);
 
     char init_user_name[USER_NAME_MAX_LEN];
     bool logon = false;
@@ -30,15 +69,20 @@ int main(int argc, const char *argv[]) {
         logon = get_user_by_name(head, current_usr, init_user_name);
     }
 
+    current_dir = change_home_dir(usr_dir_list, current_usr);
+
     bool endSignal = false;
 
     while (!endSignal) {
         char line[LINE_MAX_LEN];
         char instr[INSTR_MAX_LEN];
+        char text_dir[LINE_MAX_LEN];
         char input_usr_name[USER_NAME_MAX_LEN];
         char redundent[LINE_MAX_LEN];
+        char option[LINE_MAX_LEN];
 
-        printf("%s: ", current_usr->name);
+        printf("\x1b[32m""%s@vfs\t""\x1b[0m", current_usr->name);
+        get_current_path_str(current_dir, text_dir);
         fflush(stdout);
 
         fgets(line, LINE_MAX_LEN, stdin);
@@ -51,13 +95,29 @@ int main(int argc, const char *argv[]) {
                 printf("System shut down by user :%s\n", current_usr->name);
                 break;
             case __swap_user:
-                if (sscanf(line, "%s%s%s", input_usr_name, input_usr_name, redundent) == 2)
-                    get_user_by_name(head, current_usr, input_usr_name);
+                if (sscanf(line, "%s%s%s", input_usr_name, input_usr_name, redundent) == 2) {
+                    if (get_user_by_name(head, current_usr, input_usr_name) == true)
+                        current_dir = change_home_dir(usr_dir_list, current_usr);
+                }
                 break;
             case __error_instr:
                 break;
             case __stdout_clear:
                 system("clear");
+                break;
+            case __list_file:
+                if (sscanf(line, "%s%s", input_usr_name, option) == 1)
+                    ls_handle(current_dir, 'n');
+                else if (strlen(option) > 1)
+                    ls_handle(current_dir, option[1]);
+                else
+                    type_instr = __error_instr;
+                break;
+            case __change_directory:
+                if (sscanf(line, "%s%s", input_usr_name, redundent) == 2)
+                    current_dir = cd_handle(current_dir, redundent);
+                else
+                    type_instr = __error_instr;
                 break;
             default:
                 printf("Some unknown error occurs!\n");
@@ -73,5 +133,6 @@ int main(int argc, const char *argv[]) {
     save_entry(root_dir);
     free_block(sb);
     fflush(stdin);
+#endif
     return 0;
 }
