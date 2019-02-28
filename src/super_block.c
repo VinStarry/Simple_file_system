@@ -153,10 +153,6 @@ struct inode *alloc_inode(struct super_block *sb) {
         return NULL;
     }
 
-    struct inode_linked_list *ptr = (struct inode_linked_list *)malloc(sizeof(struct inode_linked_list));
-    ptr->inode = new_inode;
-    ptr->next = NULL;
-
     return new_inode;
 }
 
