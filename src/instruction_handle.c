@@ -485,6 +485,7 @@ bool cat_handle(struct dentry *parent_dir, const char *dir_name, struct super_bl
                 offset += rtn;
             }
             printf("%s", content);
+            fflush(stdout);
             free(content);
         }
     }
