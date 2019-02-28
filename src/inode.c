@@ -44,8 +44,6 @@ void get_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
     offset += sizeof(unsigned long);
     memcpy(&inode->i_btyes, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
     offset += sizeof(unsigned long);
-    memcpy(&inode->i_nlink, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
-    offset += sizeof(unsigned long);
     memcpy(&inode->mode, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
     offset += sizeof(unsigned long);
     memcpy(&inode->i_blocks, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
@@ -62,8 +60,6 @@ void put_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
     memcpy(sb->s_bdev + begin_pos + offset, &inode->i_no, sizeof(unsigned long));
     offset += sizeof(unsigned long);
     memcpy(sb->s_bdev + begin_pos + offset, &inode->i_btyes, sizeof(unsigned long));
-    offset += sizeof(unsigned long);
-    memcpy(sb->s_bdev + begin_pos + offset, &inode->i_nlink, sizeof(unsigned long));
     offset += sizeof(unsigned long);
     memcpy(sb->s_bdev + begin_pos + offset, &inode->mode, sizeof(unsigned long));
     offset += sizeof(unsigned long);

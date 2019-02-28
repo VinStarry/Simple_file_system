@@ -40,7 +40,7 @@ void print_time(struct tm* lt) {
     printf ( "%d/%d/%d %d:%d:%d\n",lt->tm_year+1900, lt->tm_mon, lt->tm_mday, lt->tm_hour, lt->tm_min, lt->tm_sec);
 }
 
-unsigned int priority_get_by_number(int num) {
+unsigned long priority_get_by_number(int num) {
     unsigned int rtn = 0;
     int temp = num;
     int residue;
