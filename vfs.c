@@ -99,6 +99,12 @@ int main(int argc, const char *argv[]) {
                 else
                     type_instr = __error_instr;
                 break;
+            case __make_directory:
+                if (sscanf(line, "%s%s", input_usr_name, redundent) == 2)
+                    mkdir_handle(current_dir, redundent, current_usr, sb);
+                else
+                    type_instr = __error_instr;
+                break;
             case __change_directory:
                 if (sscanf(line, "%s%s", input_usr_name, redundent) == 2)
                     current_dir = cd_handle(current_dir, redundent);
