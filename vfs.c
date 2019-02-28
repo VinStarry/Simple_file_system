@@ -97,8 +97,8 @@ int main(int argc, const char *argv[]) {
                 break;
             case __change__mode:
                 if (!strcmp(current_usr->name, "root")) {
-                    if (sscanf(line, "%s%s%u", input_usr_name, input_usr_name, &input_mode) == 3)
-                        chmod_handle(current_dir, input_mode, init_user_name);
+                    if (sscanf(line, "%s%u%s", input_usr_name, &input_mode, input_usr_name) == 3)
+                        chmod_handle(current_dir, input_mode, input_usr_name);
                     else
                         type_instr = __error_instr;
                 }
