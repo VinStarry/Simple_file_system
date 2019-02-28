@@ -576,15 +576,16 @@ bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_b
                 offset += rtn;
             }
             printf("%s", content);
+            fflush(stdin);
             char *new_content = (char *)malloc(sizeof(char) * DEFAULT_FILE_BLK);
             int t = 0;
-            round = 0;
+            round = 1;
             while ( ch != '\n') {
                 ch = (char)getchar();
                 new_content[t++] = ch;
                 if (t > round * DEFAULT_FILE_BLK) {
                     round++;
-                    new_content = (char *)realloc(content, sizeof(char) * (round * DEFAULT_FILE_BLK));
+                    new_content = (char *)realloc(new_content, sizeof(char) * (round * DEFAULT_FILE_BLK));
                 }
             }
             new_content[t] = '\0';
@@ -629,7 +630,7 @@ bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_b
 
 bool permit_write(u_mode_t f_mode, unsigned long priority) {
     const unsigned long a_mask = 0x01;
-    unsigned long shift = 1 + priority * 3;
+    unsigned long shift = 1 + (2 - priority) * 3;
     unsigned long temp = (a_mask << shift) & f_mode;
     if ((temp >> shift) == a_mask) {
         return true;
@@ -639,7 +640,7 @@ bool permit_write(u_mode_t f_mode, unsigned long priority) {
 
 bool permit_read(u_mode_t f_mode, unsigned long priority) {
     const unsigned long a_mask = 0x01;
-    unsigned long shift = 2 + priority * 3;
+    unsigned long shift = 2 + (2 - priority) * 3;
     unsigned long temp = (a_mask << shift) & f_mode;
     if ((temp >> shift) == a_mask) {
         return true;

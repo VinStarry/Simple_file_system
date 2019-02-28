@@ -12,9 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6983b98-6e25-4e17-94dd-bf1622336a58" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/blk_data.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/blk_data.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/dentry.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/dentry.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instruction_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction_handle.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vfs" beforeDir="false" afterPath="$PROJECT_DIR$/vfs" afterDir="false" />
     </list>
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vfs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="149">
+              <caret line="127" selection-start-line="127" selection-end-line="127" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#377#415#0" expanded="true" />
@@ -57,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="180" column="45" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
+            <state relative-caret-position="276">
+              <caret line="589" column="13" lean-forward="true" selection-start-line="589" selection-start-column="13" selection-end-line="589" selection-end-column="13" />
               <folding>
                 <element signature="e#12221#12484#0" />
                 <element signature="e#12490#12935#0" />
@@ -127,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/super_block.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="272" selection-start-line="272" selection-end-line="272" />
+            <state relative-caret-position="596">
+              <caret line="271" selection-start-line="271" selection-end-line="271" />
               <folding>
                 <element signature="e#135#2553#0" />
                 <element signature="e#2555#2777#0" />
@@ -178,8 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>root_dir</find>
-      <find>user_linked_list</find>
       <find>list_file</find>
       <find>ls</find>
       <find>hash_table_delete</find>
@@ -204,10 +201,12 @@
       <find>mkdir_han</find>
       <find>write_block</find>
       <find>unknown</find>
-      <find>occupy_block</find>
       <find>load_en</find>
-      <find>load_entry</find>
       <find>'l'</find>
+      <find>strcat</find>
+      <find>occupy_block</find>
+      <find>load_entry</find>
+      <find>edit_han</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -332,7 +331,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107046000" />
+    <option name="totallyTimeSpent" value="107717000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -344,12 +352,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.28674698" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32891566" />
@@ -390,8 +398,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/instruction_handle.c</url>
-          <line>577</line>
-          <option name="timeStamp" value="191" />
+          <line>594</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/instruction_handle.c</url>
+          <line>558</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/instruction_handle.c</url>
+          <line>583</line>
+          <option name="timeStamp" value="195" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -404,11 +422,35 @@
         <watch expression="inode" language="ObjectiveC" />
         <watch expression="blk_ptr" language="ObjectiveC" />
         <watch expression="content" language="ObjectiveC" />
+        <watch expression="content" language="ObjectiveC" />
+        <watch expression="new_content" language="ObjectiveC" />
+        <watch expression="user-&gt;priority" language="ObjectiveC" />
+        <watch expression="ch" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>ch</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>user-&gt;priority</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new_content</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>content</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>blk_ptr</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -430,32 +472,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>content</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ch</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
         <expression-string>num</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((struct dentry *)q-&gt;front-&gt;val)-&gt;d_inode-&gt;i_no</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((struct dentry *)q-&gt;front-&gt;val)-&gt;d_inode</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(struct dentry *)q-&gt;front-&gt;val</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -563,10 +580,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding>
+            <element signature="e#110#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trival_helper.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/super_block.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="272" selection-start-line="272" selection-end-line="272" />
+        <state relative-caret-position="596">
+          <caret line="271" selection-start-line="271" selection-end-line="271" />
           <folding>
             <element signature="e#135#2553#0" />
             <element signature="e#2555#2777#0" />
@@ -577,27 +611,6 @@
             <element signature="e#6463#7501#0" />
             <element signature="e#7503#8276#0" />
             <element signature="e#8728#8803#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vfs.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#377#415#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding>
-            <element signature="e#110#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -642,17 +655,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trival_helper.c">
+    <entry file="file://$PROJECT_DIR$/vfs.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="149">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#377#415#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="180" column="45" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
+        <state relative-caret-position="276">
+          <caret line="589" column="13" lean-forward="true" selection-start-line="589" selection-start-column="13" selection-end-line="589" selection-end-column="13" />
           <folding>
             <element signature="e#12221#12484#0" />
             <element signature="e#12490#12935#0" />
