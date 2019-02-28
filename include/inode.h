@@ -15,5 +15,9 @@ struct inode_linked_list {
 
 struct inode_linked_list *init_inode_list(size_t num, struct super_block *sb);
 struct inode_linked_list *inode_list_free(struct inode_linked_list *ilist);
+void get_inode_memory_by_num(struct inode *inode, struct super_block *sb);
+void put_inode_memory_by_num(struct inode *inode, struct super_block *sb);
+bool test_block_free_by_inode_num(unsigned long inode_num, struct super_block *sb);
+void fill_block_by_inode_num(unsigned long inode_num, struct super_block *sb);
 
 #endif //VFS_INODE_H

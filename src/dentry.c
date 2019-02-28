@@ -6,7 +6,7 @@
 
 const char * const dentry_path = "./data/dentry.txt";
 
-bool save_entry(struct dentry *root) {
+bool save_entry(struct dentry *root, struct super_block *sb) {
     FILE *fp = fopen(dentry_path, "w");
     if (fp == NULL) {
         printf("An error occurs when open %s\n, save entry failed!\n", dentry_path);
@@ -70,6 +70,8 @@ bool save_entry(struct dentry *root) {
     while (!queue_empty(q)) {
         fprintf(fp, "%d\n%lu %c\n", q->front->aux, ((struct dentry *)q->front->val)->d_inode->i_no, ((struct dentry *)q->front->val)->type);
 
+        put_inode_memory_by_num(((struct dentry *)q->front->val)->d_inode, sb);
+
         fwrite(((struct dentry *)q->front->val)->d_time, sizeof(struct tm), 1, fp);
         fputc('\n', fp);
         fprintf(fp, "%s\n", ((struct dentry *)q->front->val)->d_iname);
@@ -88,9 +90,11 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
         return false;
     }
     int level = 0;
-    if (root->d_inode == NULL)
-        root->d_inode = (struct inode *)malloc(sizeof(struct inode));
+    if (root->d_inode == NULL) {
+        root->d_inode = (struct inode *) malloc(sizeof(struct inode));
+    }
     fscanf(fp, "%d\n%lu %c\n", &level, &root->d_inode->i_no, &root->type);
+    get_inode_memory_by_num(root->d_inode, sb);
     root->d_time = (struct tm *)malloc(sizeof(struct tm));
     fread(root->d_time, sizeof(struct tm), 1, fp);
     fscanf(fp, "%s\n", root->d_iname);
@@ -107,6 +111,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
             break;
         }
         else {
+            get_inode_memory_by_num(new_dir->d_inode, sb);
             new_dir->d_time = (struct tm *)malloc(sizeof(struct tm));
             fread(new_dir->d_time, sizeof(struct tm), 1, fp);
             fscanf(fp, "%s\n", new_dir->d_iname);

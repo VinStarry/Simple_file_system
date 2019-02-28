@@ -159,7 +159,7 @@ struct inode *alloc_inode(struct super_block *sb) {
 
 bool occupy_block(blkcnt_t blk_no, struct super_block *sb) {
     unsigned long begin_pos = sb->s_blocksize;
-    unsigned long char_pos = (blk_no + sb->s_bitmap_blks + 4) / 8 + begin_pos;
+    unsigned long char_pos = (blk_no) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
     int char_bit = (int)blk_no % 8 ;
     printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
     char *test_char = (char *)sb->s_bdev + char_pos;
@@ -173,7 +173,7 @@ bool occupy_block(blkcnt_t blk_no, struct super_block *sb) {
 
 bool release_block(blkcnt_t blk_no, struct super_block *sb) {
     unsigned long begin_pos = sb->s_blocksize;
-    unsigned long char_pos = (blk_no + sb->s_bitmap_blks + 4) / 8 + begin_pos;
+    unsigned long char_pos = (blk_no) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
     int char_bit = (int)blk_no % 8 ;
     printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
     char *test_char = (char *)sb->s_bdev + char_pos;

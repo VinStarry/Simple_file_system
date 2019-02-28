@@ -52,7 +52,7 @@ int main(int argc, const char *argv[]) {
         sb = init_block(root_dir);
     }
     struct user_linked_list *head = load_users_info();
-    load_entry(root_dir);
+    load_entry(root_dir, sb);
 
     current_usr = (struct usr_ptr *)malloc(sizeof(current_usr));
     current_dir = root_dir;
@@ -130,7 +130,7 @@ int main(int argc, const char *argv[]) {
     save_users_info(head);
     free_user_info(head);
     save_block(sb);
-    save_entry(root_dir);
+    save_entry(root_dir, sb);
     free_block(sb);
     fflush(stdin);
 #endif

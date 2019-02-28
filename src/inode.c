@@ -33,3 +33,37 @@ struct inode_linked_list *inode_list_free(struct inode_linked_list *ilist) {
     }
     return NULL;
 }
+
+void get_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
+    unsigned long ino = inode->i_no;
+    unsigned long begin_pos = (sb->s_bitmap_blks + 1) * sb->s_blocksize + ino * (sizeof(struct inode));
+    memcpy(inode, sb->s_bdev + begin_pos, sizeof(struct inode));
+}
+
+void put_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
+    unsigned long ino = inode->i_no;
+    unsigned long begin_pos = (sb->s_bitmap_blks + 1) * sb->s_blocksize + ino * (sizeof(struct inode));
+    memcpy(sb->s_bdev + begin_pos, inode, sizeof(struct inode));
+    fill_block_by_inode_num(inode->i_no, sb);
+}
+
+bool test_block_free_by_inode_num(unsigned long inode_num, struct super_block *sb) {
+    unsigned long begin_pos = sb->s_blocksize;
+    unsigned long char_pos = (inode_num) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
+    int char_bit = (int)inode_num % 8 ;
+//    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
+    char *test_char = (char *)sb->s_bdev + char_pos;
+    if (test_bit_char(*test_char, 7 - char_bit) == true)
+        return false;   // occupied
+    return true;    // free
+}
+
+void fill_block_by_inode_num(unsigned long inode_num, struct super_block *sb) {
+    unsigned long begin_pos = sb->s_blocksize;
+    unsigned long char_pos = (inode_num) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
+    int char_bit = (int)inode_num % 8 ;
+//    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
+    char *test_char = (char *)sb->s_bdev + char_pos;
+    char result = fill_bit_char(*test_char, 7 - char_bit);
+    ((char *)sb->s_bdev)[char_pos] = result;
+}

@@ -7,6 +7,7 @@
 
 typedef void * qtype;
 #include "data_structures.h"
+#include "inode.h"
 
 typedef struct _queue_node {
     qtype val;                  // value of the node
@@ -25,7 +26,7 @@ struct __dentry_with_level {
     int level;
 };
 
-bool save_entry(struct dentry *root);
+bool save_entry(struct dentry *root, struct super_block *sb);
 bool load_entry(struct dentry *root, struct super_block *sb);
 struct dir_hash_table *d_hash(struct dentry *dentry);
 void hash_table_insert(struct dentry *dentry, struct dentry *sub_dentry);
