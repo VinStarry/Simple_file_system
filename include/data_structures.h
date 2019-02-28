@@ -8,9 +8,8 @@
 #define DNAME_LEN 100
 #define HASH_TABLE_ROW 10
 
-typedef unsigned uid_t;
 typedef unsigned long blkcnt_t;
-typedef unsigned int u_mode_t;
+typedef unsigned long u_mode_t;
 
 #include "trival_helper.h"
 #include "user.h"
@@ -59,7 +58,7 @@ struct inode {
     struct blk_lists *i_list;
     unsigned long i_nlink;
     unsigned long i_no;
-    uid_t i_uid;
+    unsigned long i_uid;
     blkcnt_t i_blocks;
     unsigned long i_btyes;
     u_mode_t mode;

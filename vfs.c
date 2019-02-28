@@ -15,31 +15,7 @@ dlist *usr_dir_list = NULL;
 int main(int argc, const char *argv[]) {
 
 #ifdef __debug_mode
-    root_dir = (struct dentry *)malloc(sizeof(struct dentry));
-    root_dir->d_inode = NULL;
-    struct super_block *sb = load_block(root_dir);
-    struct user_linked_list *head = load_users_info();
-    load_entry(root_dir);
-
-//    struct inode *inode1 = (struct inode *)malloc(sizeof(struct inode));
-//    alloc_block_for_inode(sb, inode1);
-//    alloc_block_for_inode(sb, inode1);
-//    alloc_block_for_inode(sb, inode1);
-//    alloc_block_for_inode(sb, inode1);
-//
-//    free_block_for_inode(sb, inode1);
-//    free_block_for_inode(sb, inode1);
-//    free_block_for_inode(sb, inode1);
-//    free_block_for_inode(sb, inode1);
-//    alloc_block_for_inode(sb);
-//    alloc_data_block(sb);
-
-    save_users_info(head);
-    free_user_info(head);
-//    save_block(sb);
-//    save_entry(root_dir);
-    free_block(sb);
-    fflush(stdin);
+    printf("%lu\n", sizeof(struct inode));
 #endif
 
 #ifndef __debug_mode

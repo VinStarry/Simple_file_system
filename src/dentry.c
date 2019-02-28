@@ -94,7 +94,9 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
         root->d_inode = (struct inode *) malloc(sizeof(struct inode));
     }
     fscanf(fp, "%d\n%lu %c\n", &level, &root->d_inode->i_no, &root->type);
+
     get_inode_memory_by_num(root->d_inode, sb);
+
     root->d_time = (struct tm *)malloc(sizeof(struct tm));
     fread(root->d_time, sizeof(struct tm), 1, fp);
     fscanf(fp, "%s\n", root->d_iname);

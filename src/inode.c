@@ -37,16 +37,39 @@ struct inode_linked_list *inode_list_free(struct inode_linked_list *ilist) {
 void get_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
     unsigned long ino = inode->i_no;
     unsigned long begin_pos = (sb->s_bitmap_blks + 1) * sb->s_blocksize + ino * (sizeof(struct inode));
-    memcpy(inode, sb->s_bdev + begin_pos, sizeof(struct inode));
+    unsigned long offset = 0;
+    memcpy(&inode->i_uid, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(&inode->i_no, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(&inode->i_btyes, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(&inode->i_nlink, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(&inode->mode, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(&inode->i_blocks, sb->s_bdev + begin_pos + offset, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+
 }
 
 void put_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
     unsigned long ino = inode->i_no;
     unsigned long begin_pos = (sb->s_bitmap_blks + 1) * sb->s_blocksize + ino * (sizeof(struct inode));
-    struct inode *itemp = (struct inode *)malloc(sizeof(struct inode));
-    memcpy(sb->s_bdev + begin_pos, inode, sizeof(struct inode));
-    memcpy(itemp, sb->s_bdev + begin_pos, sizeof(struct inode));
-    free(itemp);
+    unsigned long offset = 0;
+    memcpy(sb->s_bdev + begin_pos + offset, &inode->i_uid, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(sb->s_bdev + begin_pos + offset, &inode->i_no, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(sb->s_bdev + begin_pos + offset, &inode->i_btyes, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(sb->s_bdev + begin_pos + offset, &inode->i_nlink, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(sb->s_bdev + begin_pos + offset, &inode->mode, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+    memcpy(sb->s_bdev + begin_pos + offset, &inode->i_blocks, sizeof(unsigned long));
+    offset += sizeof(unsigned long);
+
     fill_block_by_inode_num(inode->i_no, sb);
 }
 
