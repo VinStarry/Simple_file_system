@@ -16,7 +16,7 @@
 
 enum INSTR_TYPE {
     __shutdown, __swap_user, __list_file, __rename_file,
-    __hard_link, __change_directory, __remove_file,  __change__mode,
+    __change_directory, __remove_file,  __change__mode,
     __edit_file, __stdout_clear, __make_directory, __cat_file,
     __error_instr,
 };
@@ -36,6 +36,7 @@ void free_slist(slist **sl);
 void print_slist(slist *sl);
 bool mkdir_handle(struct dentry *parent_dir, const char *dir_name, struct usr_ptr *user, struct super_block *sb);
 bool rename_handle(struct dentry *parent_dir, const char *dir_name, const char *new_name);
+bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb);
 
 void str_get_priority(struct inode *inode1, char *buf);
 unsigned long priority_get_by_usr(struct usr_ptr *user);
