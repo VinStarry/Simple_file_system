@@ -30,7 +30,7 @@ inline char release_bit_char(char byte, int num) {
 
 struct tm* get_local_time(void) {
     time_t t;
-    struct tm * lt;
+    struct tm * lt = (struct tm *)malloc(sizeof(struct tm));
     time (&t);
     lt = localtime (&t);
     return lt;

@@ -484,6 +484,8 @@ bool cat_handle(struct dentry *parent_dir, const char *dir_name, struct super_bl
                 size_t rtn = read_block(sb, blk_ptr->blk_no, content + offset, blk_ptr->blk_len);
                 offset += rtn;
             }
+            printf("%s", content);
+            free(content);
         }
     }
     return true;
@@ -491,6 +493,7 @@ bool cat_handle(struct dentry *parent_dir, const char *dir_name, struct super_bl
 
 bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user) {
     struct dentry *target_dir = search_by_str(parent_dir, dir_name);
+    fflush(stdin);
     if (target_dir == NULL) {
         struct dentry *new_dir = (struct dentry *)malloc(sizeof(struct dentry));
         new_dir->d_inode = alloc_inode(sb);
@@ -515,12 +518,13 @@ bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_b
 
         hash_table_insert(parent_dir, new_dir);
         char *content = (char *)malloc(sizeof(char) * DEFAULT_FILE_BLK);
-        char ch;
-        unsigned long bytes = 0;
+        char ch = 0;
+        long bytes = 0;
         int round = 1;
         system("clear");
         printf("%s:\n", dir_name);
-        while ( (ch = (char)getchar()) != EOF) {
+        while ( ch != '\n') {
+            ch = (char)getchar();
             content[bytes++] = ch;
             if (bytes > round * DEFAULT_FILE_BLK) {
                 round++;
@@ -529,18 +533,20 @@ bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_b
         }
         content[bytes] = '\0';
 
-        new_dir->d_inode->i_btyes = bytes;
+        new_dir->d_inode->i_btyes = (unsigned long)bytes;
         new_dir->d_inode->i_list = (struct blk_lists *)malloc(sizeof(struct blk_lists));
         struct blk_lists *blk_ptr = new_dir->d_inode->i_list;
         unsigned long offset = 0;
         while (bytes > 0) {
-            blk_ptr->next_blk->blk_no = alloc_data_block(sb);
+            blk_ptr->next_blk = (struct blk_lists *)malloc(sizeof(struct blk_lists));
+            blk_ptr = blk_ptr->next_blk;
+            blk_ptr->blk_no = alloc_data_block(sb);
             new_dir->d_inode->i_blocks++;
             if (bytes > sb->s_blocksize) {
                 blk_ptr->blk_len = sb->s_blocksize;
             }
             else {
-                blk_ptr->blk_len = bytes;
+                blk_ptr->blk_len = (unsigned long)bytes;
             }
             size_t rtn = write_block(sb, blk_ptr->blk_no, content + offset, blk_ptr->blk_len);
             blk_ptr->next_blk = NULL;

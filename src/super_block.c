@@ -160,13 +160,13 @@ bool occupy_block(blkcnt_t blk_no, struct super_block *sb) {
     unsigned long begin_pos = sb->s_blocksize;
     unsigned long char_pos = (blk_no) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
     int char_bit = (int)blk_no % 8 ;
-    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
+//    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
     char *test_char = (char *)sb->s_bdev + char_pos;
     if (test_bit_char(*test_char, 7 - char_bit) == true)
         return false;
     char result = fill_bit_char(*test_char, 7 - char_bit);
     ((char *)sb->s_bdev)[char_pos] = result;
-    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
+//    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
     return true;
 }
 
@@ -241,7 +241,7 @@ void *free_block_for_inode(struct super_block *sb, struct inode *inode) {
 }
 
 unsigned long alloc_data_block(struct super_block *sb) {
-    unsigned long blk_max_no = sb->s_blocknumbers - sb->s_bitmap_blks;
+    unsigned long blk_max_no = sb->s_blocknumbers - sb->s_bitmap_blks - 1;
     unsigned long blk_char_pos = sb->s_blocksize * (sb->s_bitmap_blks + 1);
     for (unsigned long i = blk_max_no - 1; i >= 0; i++) {
         if (test_block_free_by_inode_num(i, sb)) {
