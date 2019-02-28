@@ -142,7 +142,7 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
     return rtn;
 }
 
-void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option) {
+void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option, struct user_linked_list *head) {
     if (option == 'n') {
         slist *str_list = init_slist();
         for (int i = 0; i < HASH_TABLE_ROW; i++) {
@@ -155,6 +155,46 @@ void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option) 
         sort_slist(str_list);
         print_slist(str_list);
         free_slist(&str_list);
+    }
+    else if (option == 'l') {
+        slist *str_list = init_slist();
+        for (int i = 0; i < HASH_TABLE_ROW; i++) {
+            struct dir_hash_table *ptr = dentry->subdirs[i];
+            while(ptr->next) {
+                ptr = ptr->next;
+                if (!strcmp(ptr->dname, ".") || !strcmp(ptr->dname, ".."))
+                    continue;
+                char *buf = (char *)malloc(sizeof(char) * 11);
+                str_get_priority(ptr->corres_dentry->d_inode, buf);
+
+                if (ptr->corres_dentry->type == __directory) {
+                    buf[0] = __directory;
+                    printf("%s\t", buf);
+                }
+                else if (ptr->corres_dentry->type == __link) {
+                    buf[0] = __link;
+                    printf("%s\t", buf);
+                }
+                else {
+                    buf[0] = __file;
+                    printf("%s\t", buf);
+                }
+
+                if (ptr->corres_dentry->type == __directory || ptr->corres_dentry->type == __link)
+                    printf("%lu\t%s\t%lu\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid),
+                sizeof(struct inode));
+                else
+                    printf("%lu\t%s\t%lu\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid)
+,                    ptr->corres_dentry->d_inode->i_btyes);
+                print_time(ptr->corres_dentry->d_time);
+                if (ptr->corres_dentry->type == __directory)
+                    printf("\t" ANSI_COLOR_BLUE "%s" ANSI_COLOR_RESET "\n", ptr->dname);
+                else if (ptr->corres_dentry->type == __link)
+                    printf("\t" ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET "\n", ptr->dname);
+                else
+                    printf("\t""%s\n", ptr->dname);
+            }
+        }
     }
     else if (option == 'R') {
         slist *str_list = init_slist();
@@ -268,3 +308,15 @@ void chmod_handle(struct dentry *cur_dir, unsigned int mode_num, char *name) {
     rtn->d_inode->mode = priority_get_by_number(mode_num);
 }
 
+void str_get_priority(struct inode *inode1, char *buf) {
+    char paylod[] = "-rwxrwxrwx";
+    const unsigned long mask1 = 0x01;
+    unsigned long t = inode1->mode;
+    size_t len = strlen(paylod);
+    for (int i = 0; i < 9; i++) {
+        unsigned long temp = mask1 << i;
+        if (((temp & t) >> i) != mask1)
+            paylod[len - 1 - i] = '-';
+    }
+    strcpy(buf, paylod);
+}

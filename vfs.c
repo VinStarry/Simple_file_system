@@ -93,9 +93,9 @@ int main(int argc, const char *argv[]) {
                 break;
             case __list_file:
                 if (sscanf(line, "%s%s", input_usr_name, option) == 1)
-                    ls_handle(current_dir, root_dir, 'n');
+                    ls_handle(current_dir, root_dir, 'n', head);
                 else if (strlen(option) > 1)
-                    ls_handle(current_dir, current_dir, option[1]);
+                    ls_handle(current_dir, current_dir, option[1], head);
                 else
                     type_instr = __error_instr;
                 break;

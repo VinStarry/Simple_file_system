@@ -12,6 +12,28 @@ trival_helper.h
 user.h
 /Users/yongxinxu/Desktop/Projects/vfs/include/user.h
 
+/Users/yongxinxu/Desktop/Projects/vfs/include/dentry.h
+data_structures.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+inode.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/inode.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/include/inode.h
+stdlib.h
+-
+../include/data_structures.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/include/instruction_handle.h
+string.h
+-
+data_structures.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/data_structures.h
+user.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/user.h
+dentry.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/dentry.h
+
 /Users/yongxinxu/Desktop/Projects/vfs/include/trival_helper.h
 time.h
 -
@@ -34,7 +56,7 @@ stdio.h
 string.h
 -
 
-/Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c
-../include/trival_helper.h
-/Users/yongxinxu/Desktop/Projects/vfs/include/trival_helper.h
+/Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c
+../include/instruction_handle.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/instruction_handle.h
 

@@ -23,7 +23,7 @@ enum INSTR_TYPE {
 typedef int instr_type;
 
 instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]);
-void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option);
+void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option, struct user_linked_list *head);
 struct dentry *cd_handle(struct dentry *dentry, const char *path);
 void chmod_handle(struct dentry *cur_dir, unsigned int mode_num, char *name);
 
@@ -34,5 +34,6 @@ bool str_in_slists(slist *sl, char *str);
 void free_slist(slist **sl);
 void print_slist(slist *sl);
 
+void str_get_priority(struct inode *inode1, char *buf);
 
 #endif //VFS_INSTRUCTION_HANDLE_H

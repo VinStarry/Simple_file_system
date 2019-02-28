@@ -37,11 +37,11 @@ struct tm* get_local_time(void) {
 }
 
 void print_time(struct tm* lt) {
-    printf ( "%d/%d/%d %d:%d:%d\n",lt->tm_year+1900, lt->tm_mon, lt->tm_mday, lt->tm_hour, lt->tm_min, lt->tm_sec);
+    printf ( "%d/%d/%d %d:%d:%d",lt->tm_year+1900, lt->tm_mon, lt->tm_mday, lt->tm_hour, lt->tm_min, lt->tm_sec);
 }
 
 unsigned long priority_get_by_number(int num) {
-    unsigned int rtn = 0;
+    unsigned long rtn = 0;
     int temp = num;
     int residue;
     unsigned int decimal = 0;
@@ -53,4 +53,3 @@ unsigned long priority_get_by_number(int num) {
     }
     return rtn;
 }
-
