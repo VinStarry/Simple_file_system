@@ -9,14 +9,15 @@
 #include "data_structures.h"
 #include "user.h"
 #include "dentry.h"
+#include "super_block.h"
 
 #define INSTR_MAX_LEN 50
 #define LINE_MAX_LEN 2048
 
 enum INSTR_TYPE {
-    __shutdown, __swap_user, __list_file, __copy_file,
-    __hard_link, __change_directory, __move_file, __remove_file,
-    __edit_file, __stdout_clear, __make_directory,  __change__mode,
+    __shutdown, __swap_user, __list_file, __rename_file,
+    __hard_link, __change_directory, __remove_file,  __change__mode,
+    __edit_file, __stdout_clear, __make_directory, __cat_file,
     __error_instr,
 };
 
@@ -33,7 +34,9 @@ void sort_slist(slist *sl);
 bool str_in_slists(slist *sl, char *str);
 void free_slist(slist **sl);
 void print_slist(slist *sl);
+bool mkdir_handle(struct dentry *parent_dir, const char *dir_name, struct usr_ptr *user, struct super_block *sb);
 
 void str_get_priority(struct inode *inode1, char *buf);
+unsigned long priority_get_by_usr(struct usr_ptr *user);
 
 #endif //VFS_INSTRUCTION_HANDLE_H

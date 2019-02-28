@@ -113,30 +113,30 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
         rtn = __swap_user;
     else if (!strcmp(instr, "ls"))
         rtn = __list_file;
-    // todo:
+        // todo:
     else if (!strcmp(instr, "mkdir"))
         rtn = __make_directory;
     else if (!strcmp(instr, "chmod"))
         rtn = __change__mode;
-    // todo:
-    else if (!strcmp(instr, "cp"))
-        rtn = __copy_file;
-    // todo:
+        // todo:
     else if (!strcmp(instr, "ln"))
         rtn = __hard_link;
     else if (!strcmp(instr, "cd"))
         rtn = __change_directory;
-    // todo:
-    else if (!strcmp(instr, "mv"))
-        rtn = __move_file;
-    // todo:
+        // todo:
+    else if (!strcmp(instr, "rename"))
+        rtn = __rename_file;
+        // todo:
     else if (!strcmp(instr, "rm"))
         rtn = __remove_file;
-    // todo:
+        // todo:
     else if (!strcmp(instr, "edit"))
         rtn = __edit_file;
     else if (!strcmp(instr, "clear"))
         rtn = __stdout_clear;
+        // todo:
+    else if (!strcmp(instr, "cat"))
+        rtn = __cat_file;
     else
         rtn = __error_instr;
     return rtn;
@@ -182,10 +182,10 @@ void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option, 
 
                 if (ptr->corres_dentry->type == __directory || ptr->corres_dentry->type == __link)
                     printf("%lu\t%s\t%lu\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid),
-                sizeof(struct inode));
+                           sizeof(struct inode));
                 else
                     printf("%lu\t%s\t%lu\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid)
-,                    ptr->corres_dentry->d_inode->i_btyes);
+                            ,                    ptr->corres_dentry->d_inode->i_btyes);
                 print_time(ptr->corres_dentry->d_time);
                 if (ptr->corres_dentry->type == __directory)
                     printf("\t" ANSI_COLOR_BLUE "%s" ANSI_COLOR_RESET "\n", ptr->dname);
@@ -319,4 +319,69 @@ void str_get_priority(struct inode *inode1, char *buf) {
             paylod[len - 1 - i] = '-';
     }
     strcpy(buf, paylod);
+}
+
+bool mkdir_handle(struct dentry *parent_dir, const char *dir_name, struct usr_ptr *user, struct super_block *sb) {
+    if (search_by_str(parent_dir, dir_name) != NULL) {
+        printf("file exists!\n");
+        return false;
+    }
+    else {
+        struct dentry *new_dir = (struct dentry *)malloc(sizeof(struct dentry));
+        new_dir->d_inode = alloc_inode(sb);
+        new_dir->d_inode->i_uid = user->u_id;
+        new_dir->d_inode->mode = priority_get_by_usr(user);
+        new_dir->d_inode->i_btyes = 0;
+        new_dir->d_inode->i_sb = sb;
+        new_dir->d_inode->i_blocks = 0;
+
+        if (new_dir->d_inode == NULL)
+            return false;
+        else {
+            new_dir->d_time = get_local_time();
+            strcpy(new_dir->d_iname, dir_name);
+            new_dir->type = __directory;
+            new_dir->parent = parent_dir;
+            for (int i = 0; i < HASH_TABLE_ROW; i++) {
+                new_dir->subdirs[i] = (struct dir_hash_table *)malloc(sizeof(struct dir_hash_table));
+                new_dir->subdirs[i]->dname = NULL;
+                new_dir->subdirs[i]->next = NULL;
+                new_dir->subdirs[i]->corres_dentry = NULL;
+            }
+            new_dir->d_sb = sb;
+        }
+
+        struct dentry *new_dir_self = (struct dentry *)malloc(sizeof(struct dentry));
+        new_dir_self->parent = NULL;
+        new_dir_self->d_time = new_dir->d_time;
+        new_dir_self->type = __link;
+        strcpy(new_dir_self->d_iname, ".");
+        new_dir_self->d_inode = new_dir->d_inode;
+
+        new_dir_self->d_inode->i_nlink++;
+
+        hash_table_insert(new_dir, new_dir_self);
+
+        hash_table_insert(parent_dir, new_dir);
+        struct dentry *new_dir_parent = (struct dentry *)malloc(sizeof(struct dentry));
+        new_dir_parent->parent = NULL;
+        new_dir_parent->d_time = parent_dir->d_time;
+        new_dir_parent->type = __link;
+
+        strcpy(new_dir_parent->d_iname, "..");
+        new_dir_parent->d_inode = parent_dir->d_inode;
+        new_dir_parent->d_inode->i_nlink++;
+
+        hash_table_insert(new_dir, new_dir_parent);
+    }
+    return true;
+}
+
+unsigned long priority_get_by_usr(struct usr_ptr *user) {
+    if (user->priority == 0)
+        return priority_get_by_number(751);
+    else if (user->priority == 1)
+        return priority_get_by_number(771);
+    else
+        return priority_get_by_number(777);
 }
