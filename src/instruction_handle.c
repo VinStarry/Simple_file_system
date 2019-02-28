@@ -414,7 +414,7 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
             }
         }
 
-        if (num >= 0) {
+        if (num > 0) {
             printf("rm: %s: is a directory\n", dir_name);
             return false;
         }
@@ -437,7 +437,6 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
                     prev = NULL;
                 }
             }
-            free(target_dir->subdirs);
             if (target_dir->d_inode->i_nlink == 0) {
                 free_block_for_inode(sb, target_dir->d_inode);
             }
