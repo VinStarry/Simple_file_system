@@ -176,6 +176,29 @@ bool get_user_by_name(struct user_linked_list *user_list, struct usr_ptr *curren
     return found;
 }
 
+struct usr_ptr *get_user_by_user_id(struct user_linked_list *user_list, unsigned int user_id) {
+    struct user_linked_list *ptr = user_list;
+    bool found = false;
+    while (ptr) {
+        ptr = ptr->next;
+        if (ptr) {
+            if (ptr->u_id == user_id) {
+                found = true;
+                break;
+            }
+        }
+    }
+    if (!found)
+        return NULL;
+    else {
+        struct usr_ptr *usr = (struct usr_ptr *)malloc(sizeof(struct usr_ptr));
+        usr->u_id = ptr->u_id;
+        strcpy(usr->name, ptr->name);
+        usr->priority = ptr->priority;
+        return usr;
+    }
+}
+
 void print_current_user_info(struct usr_ptr *info) {
     if (info) {
         printf("%d\t%s\t%d" ,info->u_id, info->name, info->priority);

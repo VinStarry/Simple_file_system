@@ -13,19 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6983b98-6e25-4e17-94dd-bf1622336a58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vfs.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/dentry.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/inode.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/super_block.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/trival_helper.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/vfs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vfs.dir/vfs.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/data_structures.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/data_structures.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/dentry.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/dentry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/instruction_handle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/instruction_handle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instruction_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction_handle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vfs" beforeDir="false" afterPath="$PROJECT_DIR$/vfs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vfs.c" beforeDir="false" afterPath="$PROJECT_DIR$/vfs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/user.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/user.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/user.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -62,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/dentry.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+            <state relative-caret-position="404">
+              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
               <folding>
                 <element signature="e#108#136#0" expanded="true" />
               </folding>
@@ -71,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dentry.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3160">
-              <caret line="398" column="3" lean-forward="true" selection-start-line="398" selection-start-column="3" selection-end-line="398" selection-end-column="3" />
+            <state relative-caret-position="603">
+              <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
               <folding>
                 <element signature="e#134#4486#0" />
                 <element signature="e#3547#4047#0" />
@@ -107,7 +96,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vfs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
+            <state relative-caret-position="700">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -120,32 +109,7 @@
         <entry file="file://$PROJECT_DIR$/include/data_structures.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="131">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inode.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/super_block.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="163" column="4" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
-              <folding>
-                <element signature="e#135#2553#0" />
-                <element signature="e#2555#2777#0" />
-                <element signature="e#2783#2998#0" />
-                <element signature="e#3000#4592#0" />
-                <element signature="e#4594#5423#0" />
-              </folding>
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -154,9 +118,33 @@
         <entry file="file://$PROJECT_DIR$/include/trival_helper.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
               <folding>
                 <element signature="e#100#117#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/user.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="197" column="19" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="19" />
+              <folding>
+                <element signature="e#4378#5772#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/user.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="40" column="94" selection-start-line="40" selection-start-column="94" selection-end-line="40" selection-end-column="94" />
+              <folding>
+                <element signature="e#82#101#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -205,8 +193,6 @@
         <option value="$PROJECT_DIR$/include/bit_op.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/super_block.h" />
-        <option value="$PROJECT_DIR$/src/user.c" />
-        <option value="$PROJECT_DIR$/include/user.h" />
         <option value="$PROJECT_DIR$/include/inode.h" />
         <option value="$PROJECT_DIR$/src/super_block.c" />
         <option value="$PROJECT_DIR$/src/inode.c" />
@@ -216,8 +202,10 @@
         <option value="$PROJECT_DIR$/include/trival_helper.h" />
         <option value="$PROJECT_DIR$/src/instruction_handle.c" />
         <option value="$PROJECT_DIR$/include/instruction_handle.h" />
-        <option value="$PROJECT_DIR$/include/dentry.h" />
         <option value="$PROJECT_DIR$/src/dentry.c" />
+        <option value="$PROJECT_DIR$/include/dentry.h" />
+        <option value="$PROJECT_DIR$/include/user.h" />
+        <option value="$PROJECT_DIR$/src/user.c" />
       </list>
     </option>
   </component>
@@ -306,18 +294,18 @@
       <workItem from="1551013926685" duration="61000" />
       <workItem from="1551024399108" duration="2001000" />
       <workItem from="1551081827064" duration="24938000" />
-      <workItem from="1551234710814" duration="58851000" />
+      <workItem from="1551234710814" duration="59751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87897000" />
+    <option name="totallyTimeSpent" value="88797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20529328" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20529328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -328,7 +316,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28674698" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32891566" />
@@ -475,16 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/user.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#82#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/dentry.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -505,13 +483,6 @@
           <folding>
             <element signature="e#84#103#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2780">
-          <caret line="139" column="8" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -546,7 +517,7 @@
     <entry file="file://$PROJECT_DIR$/include/trival_helper.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding>
             <element signature="e#100#117#0" expanded="true" />
           </folding>
@@ -563,7 +534,7 @@
     <entry file="file://$PROJECT_DIR$/include/data_structures.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -577,9 +548,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/dentry.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+          <folding>
+            <element signature="e#108#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vfs.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="700">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -587,20 +568,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/dentry.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
-          <folding>
-            <element signature="e#108#136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dentry.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3160">
-          <caret line="398" column="3" lean-forward="true" selection-start-line="398" selection-start-column="3" selection-end-line="398" selection-end-column="3" />
+        <state relative-caret-position="603">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
           <folding>
             <element signature="e#134#4486#0" />
             <element signature="e#3547#4047#0" />
@@ -624,6 +595,26 @@
             <element signature="e#9778#10031#0" />
             <element signature="e#10033#10231#0" />
             <element signature="e#10233#10406#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/user.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="40" column="94" selection-start-line="40" selection-start-column="94" selection-end-line="40" selection-end-column="94" />
+          <folding>
+            <element signature="e#82#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="197" column="19" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="19" />
+          <folding>
+            <element signature="e#4378#5772#0" />
           </folding>
         </state>
       </provider>

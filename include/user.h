@@ -38,4 +38,6 @@ void free_user_info(struct user_linked_list *usr_list_head);
 bool get_user_by_name(struct user_linked_list *user_list, struct usr_ptr *current_user, const char *name);
 void print_current_user_info(struct usr_ptr *info);
 
+struct usr_ptr *get_user_by_user_id(struct user_linked_list *user_list, unsigned int user_id);
+
 #endif //VFS_USER_H
