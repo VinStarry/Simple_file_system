@@ -43,7 +43,10 @@ void get_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
 void put_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
     unsigned long ino = inode->i_no;
     unsigned long begin_pos = (sb->s_bitmap_blks + 1) * sb->s_blocksize + ino * (sizeof(struct inode));
+    struct inode *itemp = (struct inode *)malloc(sizeof(struct inode));
     memcpy(sb->s_bdev + begin_pos, inode, sizeof(struct inode));
+    memcpy(itemp, sb->s_bdev + begin_pos, sizeof(struct inode));
+    free(itemp);
     fill_block_by_inode_num(inode->i_no, sb);
 }
 

@@ -141,8 +141,8 @@ int main(int argc, const char *argv[]) {
 
     save_users_info(head);
     free_user_info(head);
-    save_block(sb);
     save_entry(root_dir, sb);
+    save_block(sb);
     free_block(sb);
     fflush(stdin);
 #endif
