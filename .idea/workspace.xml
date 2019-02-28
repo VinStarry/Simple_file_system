@@ -12,7 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6983b98-6e25-4e17-94dd-bf1622336a58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/blk_data.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/blk_data.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dentry.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/dentry.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instruction_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction_handle.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vfs" beforeDir="false" afterPath="$PROJECT_DIR$/vfs" afterDir="false" />
@@ -56,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="607" column="25" selection-start-line="607" selection-start-column="25" selection-end-line="607" selection-end-column="25" />
+            <state relative-caret-position="303">
+              <caret line="180" column="45" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
               <folding>
                 <element signature="e#12221#12484#0" />
                 <element signature="e#12490#12935#0" />
@@ -331,7 +332,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106925000" />
+    <option name="totallyTimeSpent" value="107046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -343,12 +344,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.28674698" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28674698" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32891566" />
@@ -650,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="607" column="25" selection-start-line="607" selection-start-column="25" selection-end-line="607" selection-end-column="25" />
+        <state relative-caret-position="303">
+          <caret line="180" column="45" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
           <folding>
             <element signature="e#12221#12484#0" />
             <element signature="e#12490#12935#0" />

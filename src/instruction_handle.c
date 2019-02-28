@@ -175,10 +175,10 @@ void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option, 
                 }
 
                 if (ptr->corres_dentry->type == __directory || ptr->corres_dentry->type == __link)
-                    printf("%lu\t%s\t%lu\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid),
+                    printf("%lu\t%s\t%lu\t\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid),
                            sizeof(struct inode));
                 else
-                    printf("%lu\t%s\t%lu\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid)
+                    printf("%lu\t%s\t%lu\t\t", ptr->corres_dentry->d_inode->i_nlink, get_user_by_user_id(head, ptr->corres_dentry->d_inode->i_uid)
                             ,                    ptr->corres_dentry->d_inode->i_btyes);
                 print_time(ptr->corres_dentry->d_time);
                 if (ptr->corres_dentry->type == __directory)
