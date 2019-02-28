@@ -561,7 +561,67 @@ bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_b
             return false;
         }
         else {
-
+            struct blk_lists *blk_ptr = target_dir->d_inode->i_list;
+            char *content = (char *)malloc(sizeof(char) * target_dir->d_inode->i_btyes);
+            char ch = 0;
+            long bytes = target_dir->d_inode->i_btyes;
+            int round = 1;
+            system("clear");
+            printf("%s:\n", dir_name);
+            unsigned long offset = 0;
+            while (blk_ptr->next_blk) {
+                blk_ptr = blk_ptr->next_blk;
+                size_t rtn = read_block(sb, blk_ptr->blk_no, content + offset, blk_ptr->blk_len);
+                bytes -= sb->s_blocksize;
+                offset += rtn;
+            }
+            printf("%s", content);
+            char *new_content = (char *)malloc(sizeof(char) * DEFAULT_FILE_BLK);
+            int t = 0;
+            round = 0;
+            while ( ch != '\n') {
+                ch = (char)getchar();
+                new_content[t++] = ch;
+                if (t > round * DEFAULT_FILE_BLK) {
+                    round++;
+                    new_content = (char *)realloc(content, sizeof(char) * (round * DEFAULT_FILE_BLK));
+                }
+            }
+            new_content[t] = '\0';
+            long new_len = t + target_dir->d_inode->i_btyes;
+            char *new_str = (char *)malloc((unsigned long)new_len);
+            strcpy(new_str, content);
+            strcat(new_str, new_content);
+            target_dir->d_inode->i_btyes = (unsigned long)new_len;
+            struct blk_lists *tmp_ptr = target_dir->d_inode->i_list;
+            offset = 0;
+            while (new_len > 0) {
+                if (tmp_ptr->next_blk == NULL) {
+                    tmp_ptr->next_blk = (struct blk_lists *)malloc(sizeof(struct blk_lists));
+                    tmp_ptr = tmp_ptr->next_blk;
+                    tmp_ptr->blk_no = alloc_data_block(sb);
+                    target_dir->d_inode->i_blocks++;
+                    if (bytes > sb->s_blocksize) {
+                        tmp_ptr->blk_len = sb->s_blocksize;
+                    }
+                    else {
+                        tmp_ptr->blk_len = (unsigned long)new_len;
+                    }
+                    size_t rtn = write_block(sb, tmp_ptr->blk_no, content + offset, tmp_ptr->blk_len);
+                    tmp_ptr->next_blk = NULL;
+                    new_len -= sb->s_blocksize;
+                    offset += rtn;
+                }
+                else {
+                    tmp_ptr = tmp_ptr->next_blk;
+                    if (new_len > sb->s_blocksize)
+                        tmp_ptr->blk_len = sb->s_blocksize;
+                    else
+                        tmp_ptr->blk_len = (unsigned long)new_len;
+                    size_t rtn = write_block(sb, tmp_ptr->blk_no, new_str + offset, tmp_ptr->blk_len);
+                    new_len = new_len - rtn;
+                }
+            }
         }
     }
     return true;
