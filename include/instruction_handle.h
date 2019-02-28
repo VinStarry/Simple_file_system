@@ -23,7 +23,15 @@ enum INSTR_TYPE {
 typedef int instr_type;
 
 instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]);
-void ls_handle(struct dentry *dentry, char option);
+void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option);
 struct dentry *cd_handle(struct dentry *dentry, const char *path);
+
+slist *init_slist(void);
+void insert_slist(slist *sl, char *str, char type);
+void sort_slist(slist *sl);
+bool str_in_slists(slist *sl, char *str);
+void free_slist(slist **sl);
+void print_slist(slist *sl);
+
 
 #endif //VFS_INSTRUCTION_HANDLE_H

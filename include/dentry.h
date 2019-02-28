@@ -35,6 +35,7 @@ struct dentry *search_by_str(struct dentry *current_dentry, const char *dname);
 void packet_user_dlist(dlist *dl, struct user_linked_list *head, struct dentry *root);
 struct dentry *change_home_dir(dlist *dl, struct usr_ptr *current_user);
 void get_current_path_str(struct dentry *dentry, char *str);
+void travel_dentry(queue *q, slist *str_list, struct dentry *begin_dentry, size_t num);
 
 // initialize queue, allocate memory, return the initialized queue pointer
 queue *init_queue(void);

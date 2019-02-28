@@ -14,12 +14,6 @@
 
 #define PRINT_LEN 100
 
-typedef struct ___str__list {
-    char *str;
-    char type;
-    struct ___str__list *next;
-}slist;
-
 slist *init_slist(void) {
     slist *sl = (slist *)malloc(sizeof(slist));
     sl->str = NULL;
@@ -68,6 +62,19 @@ void sort_slist(slist *sl) {
         }
         base = base->next;
     }
+}
+
+bool str_in_slists(slist *sl, char *str) {
+    bool found = false;
+    slist *tmp = sl;
+    while (tmp->next) {
+        tmp = tmp->next;
+        if (!strcmp(tmp->str, str)) {
+            found = true;
+            break;
+        }
+    }
+    return found;
 }
 
 void free_slist(slist **sl) {
@@ -133,7 +140,7 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
     return rtn;
 }
 
-void ls_handle(struct dentry *dentry, char option) {
+void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option) {
     if (option == 'n') {
         slist *str_list = init_slist();
         for (int i = 0; i < HASH_TABLE_ROW; i++) {
@@ -146,6 +153,81 @@ void ls_handle(struct dentry *dentry, char option) {
         sort_slist(str_list);
         print_slist(str_list);
         free_slist(&str_list);
+    }
+    else if (option == 'R') {
+        slist *str_list = init_slist();
+        queue *q = init_queue();
+        enqueue(begin_dentry, q);
+        q->front->aux = 0;
+        int last_level = 0;
+        struct dentry *cur_entry = begin_dentry;
+
+        size_t num = 0;
+
+        for (int i = 0; i < HASH_TABLE_ROW; i++) {
+            struct dir_hash_table *ptr = cur_entry->subdirs[i];
+            while (ptr->next) {
+                ptr = ptr->next;
+                if (!strcmp(ptr->dname, ".") || !strcmp(ptr->dname, ".."))
+                    continue;
+                num++;
+            }
+        }
+
+        size_t num_of_first_level = 0;
+
+        while (cur_entry != NULL) {
+            struct dentry *temp_save = cur_entry;
+            bool found = false;
+            for (int i = 0; i < HASH_TABLE_ROW; i++) {
+                struct dir_hash_table *ptr = cur_entry->subdirs[i];
+                while (ptr->next) {
+                    ptr = ptr->next;
+                    if (!strcmp(ptr->dname, ".."))
+                        continue;
+                    if (!strcmp(ptr->dname, "."))
+                        continue;
+                    if (str_in_slists(str_list, ptr->dname)) {
+                        continue;
+                    }
+                    enqueue(ptr->corres_dentry, q);
+                    insert_slist(str_list, ptr->dname, ptr->corres_dentry->type);
+                    found = true;
+                    last_level++;
+                    q->rear->aux = last_level;
+                    cur_entry = ptr->corres_dentry;
+                    break;
+                }
+                if (found == true)
+                    break;
+            }
+            if (found == false) {
+                cur_entry = temp_save->parent;
+                last_level--;
+//                hash_table_delete(cur_entry, temp_save);
+            }
+            if (temp_save == begin_dentry) {
+                num_of_first_level++;
+                if (num_of_first_level == num) {
+                    break;
+                }
+            }
+        }
+
+        free_slist(&str_list);
+
+        while (!queue_empty(q)) {
+            for (int i = 0 ; i < q->front->aux; i++) {
+                putchar('-');
+            }
+            if (((struct dentry *)q->front->val)->type == __directory)
+                printf(ANSI_COLOR_BLUE "%s" ANSI_COLOR_RESET "\n", ((struct dentry *)q->front->val)->d_iname);
+            else if (((struct dentry *)q->front->val)->type == __link)
+                printf(ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET "\n", ((struct dentry *)q->front->val)->d_iname);
+            else
+                printf("%s\n", ((struct dentry *)q->front->val)->d_iname);
+            dequeue(q);
+        }
     }
 
 }

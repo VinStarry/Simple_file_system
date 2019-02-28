@@ -32,6 +32,12 @@ typedef struct ___dentry__list {
     struct ___dentry__list *next;
 }dlist;
 
+typedef struct ___str__list {
+    char *str;
+    char type;
+    struct ___str__list *next;
+}slist;
+
 struct dir_hash_table {
     int hash_key;
     char *dname;
