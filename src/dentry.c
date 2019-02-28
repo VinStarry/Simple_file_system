@@ -138,6 +138,8 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
             strcpy(new_dir_self->d_iname, ".");
             new_dir_self->d_inode = new_dir->d_inode;
 
+//            new_dir_self->d_inode->i_nlink++;
+
             hash_table_insert(new_dir, new_dir_self);
 
             hash_table_insert(parent_dir, new_dir);
@@ -145,8 +147,10 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
             new_dir_parent->parent = NULL;
             new_dir_parent->d_time = parent_dir->d_time;
             new_dir_parent->type = __link;
+
             strcpy(new_dir_parent->d_iname, "..");
             new_dir_parent->d_inode = parent_dir->d_inode;
+//            new_dir_parent->d_inode->i_nlink++;
 
             hash_table_insert(new_dir, new_dir_parent);
         }
