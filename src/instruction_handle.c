@@ -402,7 +402,7 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
     }
     else {
         unsigned long prio = user->priority;
-        if (!permit(target_dir->d_inode->mode, prio)) {
+        if (!permit_write(target_dir->d_inode->mode, prio)) {
             printf("permission denied!\n");
             return false;
         }
@@ -450,9 +450,7 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
         }
         else if (target_dir->type == __file){
             hash_table_delete(parent_dir, target_dir);
-            if (target_dir->d_inode->i_nlink == 0) {
-                free_block_for_inode(sb, target_dir->d_inode);
-            }
+            free_block_for_inode(sb, target_dir->d_inode);
             free(target_dir);
         }
         else {
