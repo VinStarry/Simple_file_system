@@ -132,6 +132,7 @@ struct super_block *load_block(struct dentry *root) {
 }
 
 struct inode *alloc_inode(struct super_block *sb) {
+    bool found = false;
     struct inode *new_inode = (struct inode *)malloc(sizeof(struct inode));
     new_inode->i_blocks = 0;
     new_inode->i_sb = sb;
@@ -139,20 +140,22 @@ struct inode *alloc_inode(struct super_block *sb) {
     new_inode->i_btyes = 0;
     new_inode->i_blocks = 0;
     new_inode->i_list = NULL;
-//    new_inode->i_no = sb->s_inodes_num;
+    for (unsigned long j = 0; j < sb->s_blocknumbers; j++) {
+        if (test_block_free_by_inode_num(j, sb) == true) {
+            new_inode->i_no = j;
+            found = true;
+            break;
+        }
+    }
+    if (found == false){
+        free(new_inode);
+        new_inode = NULL;
+        return NULL;
+    }
 
     struct inode_linked_list *ptr = (struct inode_linked_list *)malloc(sizeof(struct inode_linked_list));
     ptr->inode = new_inode;
     ptr->next = NULL;
-
-//    if(sb->s_inodes == NULL) {
-//        sb->s_inodes = (struct inode_linked_list *)malloc(sizeof(struct inode_linked_list));
-//        sb->s_inodes->inode = NULL;
-//        sb->s_inodes->next = NULL;
-//    }
-//    ptr->next = sb->s_inodes->next;
-//    sb->s_inodes->next = ptr;
-//    sb->s_inodes_num++;
 
     return new_inode;
 }

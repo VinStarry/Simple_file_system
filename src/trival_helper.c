@@ -6,7 +6,7 @@
 
 const char char_mask = 0x01;
 
-inline bool test_bit_char(char byte, int num) {
+inline bool test_bit_char(const char byte, const int num) {
     if (num > (sizeof(char) * 8 - 1) || num < 0)
         return false;
     char test = char_mask << num;

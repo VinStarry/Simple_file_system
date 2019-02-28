@@ -13,7 +13,7 @@
 
 struct tm* get_local_time(void);
 void print_time(struct tm* lt);
-bool test_bit_char(char byte, int num);
+bool test_bit_char(const har byte, const int num);
 char fill_bit_char(char byte, int num);
 char release_bit_char(char byte, int num);
 unsigned long priority_get_by_number(int num);

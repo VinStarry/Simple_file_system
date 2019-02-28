@@ -69,7 +69,7 @@ void put_inode_memory_by_num(struct inode *inode, struct super_block *sb) {
     fill_block_by_inode_num(inode->i_no, sb);
 }
 
-bool test_block_free_by_inode_num(unsigned long inode_num, struct super_block *sb) {
+bool test_block_free_by_inode_num(const unsigned long inode_num, const struct super_block *sb) {
     unsigned long begin_pos = sb->s_blocksize;
     unsigned long char_pos = (inode_num) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
     int char_bit = (int)inode_num % 8 ;
