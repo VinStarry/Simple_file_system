@@ -47,7 +47,7 @@ unsigned long priority_get_by_number(int num) {
     unsigned int decimal = 0;
     while (temp > 0) {
         residue = temp % 10;
-        rtn =  residue << (3 * decimal) & rtn;
+        rtn =  residue << (3 * decimal) | rtn;
         decimal++;
         temp = temp / 10;
     }
