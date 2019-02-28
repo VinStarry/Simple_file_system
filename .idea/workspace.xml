@@ -13,7 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b6983b98-6e25-4e17-94dd-bf1622336a58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/include/instruction_handle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/instruction_handle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/super_block.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/super_block.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instruction_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction_handle.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/super_block.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_block.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vfs.c" beforeDir="false" afterPath="$PROJECT_DIR$/vfs.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -29,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vfs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
+            <state relative-caret-position="416">
+              <caret line="127" column="72" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="72" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#377#415#0" expanded="true" />
@@ -42,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="300">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="e#110#129#0" expanded="true" />
               </folding>
@@ -54,8 +57,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="480" column="20" lean-forward="true" selection-start-line="480" selection-start-column="20" selection-end-line="480" selection-end-column="20" />
+            <state relative-caret-position="442">
+              <caret line="520" column="10" lean-forward="true" selection-start-line="520" selection-start-column="10" selection-end-line="520" selection-end-column="10" />
+              <folding>
+                <element signature="e#12221#12484#0" />
+                <element signature="e#12490#12935#0" />
+                <element signature="e#12845#15309#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/data_structures.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
+            <state relative-caret-position="29">
               <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#218#244#0" expanded="true" />
@@ -105,14 +113,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/super_block.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+              <folding>
+                <element signature="e#96#114#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/super_block.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
+            <state relative-caret-position="471">
+              <caret line="285" column="1" lean-forward="true" selection-start-line="285" selection-start-column="1" selection-end-line="285" selection-end-column="1" />
               <folding>
                 <element signature="e#135#2553#0" />
                 <element signature="e#2555#2777#0" />
+                <element signature="e#2783#2998#0" />
                 <element signature="e#3000#4592#0" />
+                <element signature="e#4594#5423#0" />
+                <element signature="e#5263#5847#0" />
+                <element signature="e#5853#6457#0" />
+                <element signature="e#6463#7501#0" />
+                <element signature="e#7503#8276#0" />
+                <element signature="e#8728#8803#0" />
               </folding>
             </state>
           </provider>
@@ -134,18 +161,6 @@
               <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
               <folding>
                 <element signature="e#100#117#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/inode.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-              <folding>
-                <element signature="e#84#103#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -211,7 +226,6 @@
         <option value="$PROJECT_DIR$/src/vfs.c" />
         <option value="$PROJECT_DIR$/include/bit_op.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/include/super_block.h" />
         <option value="$PROJECT_DIR$/include/dentry.h" />
         <option value="$PROJECT_DIR$/include/data_structures.h" />
         <option value="$PROJECT_DIR$/src/user.c" />
@@ -221,9 +235,10 @@
         <option value="$PROJECT_DIR$/include/trival_helper.h" />
         <option value="$PROJECT_DIR$/include/inode.h" />
         <option value="$PROJECT_DIR$/src/inode.c" />
-        <option value="$PROJECT_DIR$/src/super_block.c" />
         <option value="$PROJECT_DIR$/vfs.c" />
         <option value="$PROJECT_DIR$/include/instruction_handle.h" />
+        <option value="$PROJECT_DIR$/include/super_block.h" />
+        <option value="$PROJECT_DIR$/src/super_block.c" />
         <option value="$PROJECT_DIR$/src/instruction_handle.c" />
       </list>
     </option>
@@ -318,7 +333,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100669000" />
+    <option name="totallyTimeSpent" value="102838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -482,16 +497,6 @@
     <entry file="file://$PROJECT_DIR$/data/dentry.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/super_block.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding>
-            <element signature="e#96#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/dentry.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -546,24 +551,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/super_block.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
-          <folding>
-            <element signature="e#135#2553#0" />
-            <element signature="e#2555#2777#0" />
-            <element signature="e#3000#4592#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/trival_helper.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding>
             <element signature="e#100#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vfs.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="127" column="72" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#377#415#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#110#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -600,7 +614,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/data_structures.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
+        <state relative-caret-position="29">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#218#244#0" expanded="true" />
@@ -608,31 +622,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vfs.c">
+    <entry file="file://$PROJECT_DIR$/include/super_block.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
+        <state relative-caret-position="362">
+          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#377#415#0" expanded="true" />
+            <element signature="e#96#114#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
+    <entry file="file://$PROJECT_DIR$/src/super_block.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        <state relative-caret-position="471">
+          <caret line="285" column="1" lean-forward="true" selection-start-line="285" selection-start-column="1" selection-end-line="285" selection-end-column="1" />
           <folding>
-            <element signature="e#110#129#0" expanded="true" />
+            <element signature="e#135#2553#0" />
+            <element signature="e#2555#2777#0" />
+            <element signature="e#2783#2998#0" />
+            <element signature="e#3000#4592#0" />
+            <element signature="e#4594#5423#0" />
+            <element signature="e#5263#5847#0" />
+            <element signature="e#5853#6457#0" />
+            <element signature="e#6463#7501#0" />
+            <element signature="e#7503#8276#0" />
+            <element signature="e#8728#8803#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="480" column="20" lean-forward="true" selection-start-line="480" selection-start-column="20" selection-end-line="480" selection-end-column="20" />
+        <state relative-caret-position="442">
+          <caret line="520" column="10" lean-forward="true" selection-start-line="520" selection-start-column="10" selection-end-line="520" selection-end-column="10" />
+          <folding>
+            <element signature="e#12221#12484#0" />
+            <element signature="e#12490#12935#0" />
+            <element signature="e#12845#15309#0" />
+          </folding>
         </state>
       </provider>
     </entry>

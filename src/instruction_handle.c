@@ -461,6 +461,105 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
     return true;
 }
 
+bool cat_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user) {
+    struct dentry *target_dir = search_by_str(parent_dir, dir_name);
+    if (target_dir == NULL) {
+        printf("file doesn't exist!\n");
+        return false;
+    }
+    else {
+        if (target_dir->type == __directory || target_dir->type == __link) {
+            printf("%s is not a file\n", dir_name);
+            return false;
+        }
+        else {
+            char *content = (char *)malloc(sizeof(char) * target_dir->d_inode->i_btyes);
+            struct blk_lists *blk_ptr = target_dir->d_inode->i_list;
+            if (target_dir->d_inode->i_blocks == 0 | target_dir->d_inode->i_btyes == 0) {
+                return false;
+            }
+            unsigned long offset = 0;
+            while (blk_ptr->next_blk) {
+                blk_ptr = blk_ptr->next_blk;
+                size_t rtn = read_block(sb, blk_ptr->blk_no, content + offset, blk_ptr->blk_len);
+                offset += rtn;
+            }
+        }
+    }
+    return true;
+}
+
+bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user) {
+    struct dentry *target_dir = search_by_str(parent_dir, dir_name);
+    if (target_dir == NULL) {
+        struct dentry *new_dir = (struct dentry *)malloc(sizeof(struct dentry));
+        new_dir->d_inode = alloc_inode(sb);
+        new_dir->d_inode->i_uid = user->u_id;
+        new_dir->d_inode->mode = priority_get_by_usr(user);
+        new_dir->d_inode->i_btyes = 0;
+        new_dir->d_inode->i_sb = sb;
+        new_dir->d_inode->i_blocks = 0;
+
+        if (new_dir->d_inode == NULL)
+            return false;
+        else {
+            new_dir->d_time = get_local_time();
+            strcpy(new_dir->d_iname, dir_name);
+            new_dir->type = __file;
+            new_dir->parent = parent_dir;
+            for (int i = 0; i < HASH_TABLE_ROW; i++) {
+                new_dir->subdirs[i] = NULL;
+            }
+            new_dir->d_sb = sb;
+        }
+
+        hash_table_insert(parent_dir, new_dir);
+        char *content = (char *)malloc(sizeof(char) * DEFAULT_FILE_BLK);
+        char ch;
+        unsigned long bytes = 0;
+        int round = 1;
+        system("clear");
+        printf("%s:\n", dir_name);
+        while ( (ch = (char)getchar()) != EOF) {
+            content[bytes++] = ch;
+            if (bytes > round * DEFAULT_FILE_BLK) {
+                round++;
+                content = (char *)realloc(content, sizeof(char) * (round * DEFAULT_FILE_BLK));
+            }
+        }
+        content[bytes] = '\0';
+
+        new_dir->d_inode->i_btyes = bytes;
+        new_dir->d_inode->i_list = (struct blk_lists *)malloc(sizeof(struct blk_lists));
+        struct blk_lists *blk_ptr = new_dir->d_inode->i_list;
+        unsigned long offset = 0;
+        while (bytes > 0) {
+            blk_ptr->next_blk->blk_no = alloc_data_block(sb);
+            new_dir->d_inode->i_blocks++;
+            if (bytes > sb->s_blocksize) {
+                blk_ptr->blk_len = sb->s_blocksize;
+            }
+            else {
+                blk_ptr->blk_len = bytes;
+            }
+            size_t rtn = write_block(sb, blk_ptr->blk_no, content + offset, blk_ptr->blk_len);
+            blk_ptr->next_blk = NULL;
+            bytes -= sb->s_blocksize;
+            offset += rtn;
+        }
+    }
+    else {
+        if (!permit_write(target_dir->d_inode->mode, user->priority)) {
+            printf("permission denied!\n");
+            return false;
+        }
+        else {
+
+        }
+    }
+    return true;
+}
+
 bool permit_write(u_mode_t f_mode, unsigned long priority) {
     const unsigned long a_mask = 0x01;
     unsigned long shift = 1 + priority * 3;

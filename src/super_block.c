@@ -174,13 +174,13 @@ bool release_block(blkcnt_t blk_no, struct super_block *sb) {
     unsigned long begin_pos = sb->s_blocksize;
     unsigned long char_pos = (blk_no) / 8 + (sb->s_bitmap_blks + 4) / 8 + begin_pos;
     int char_bit = (int)blk_no % 8 ;
-    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
+//    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
     char *test_char = (char *)sb->s_bdev + char_pos;
     if (test_bit_char(*test_char, 7 - char_bit) == false)
         return false;
     char result = release_bit_char(*test_char, sizeof(char) - 1 - char_bit);
     ((char *)sb->s_bdev)[char_pos] = result;
-    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
+//    printf("%x\n", ((char *)sb->s_bdev)[char_pos]);
     return true;
 }
 
@@ -240,14 +240,47 @@ void *free_block_for_inode(struct super_block *sb, struct inode *inode) {
     return NULL;
 }
 
-void *alloc_data_block(struct super_block *sb) {
+unsigned long alloc_data_block(struct super_block *sb) {
     unsigned long blk_max_no = sb->s_blocknumbers - sb->s_bitmap_blks;
     unsigned long blk_char_pos = sb->s_blocksize * (sb->s_bitmap_blks + 1);
     for (unsigned long i = blk_max_no - 1; i >= 0; i++) {
-        if (occupy_block(i, sb)) {
+        if (test_block_free_by_inode_num(i, sb)) {
             blk_char_pos = blk_char_pos + i * sb->s_blocksize;
-            return sb->s_bdev + blk_char_pos;
+            return i;
         }
     }
-    return NULL;
+    return 0;
+}
+
+void free_data_block(unsigned long blk_no, struct super_block *sb) {
+    if (test_block_free_by_inode_num(blk_no, sb)) {
+        printf("critical error! free_data_block()\n");
+        exit(1);
+    }
+    else {
+        release_block(blk_no, sb);
+    }
+}
+
+size_t write_block(struct super_block *sb, unsigned long block_no, char *stream, size_t size) {
+    unsigned long blk_char_pos = sb->s_blocksize * (sb->s_bitmap_blks + 1);
+
+    if (test_block_free_by_inode_num(block_no, sb)) {
+        occupy_block(block_no, sb);
+    }
+    blk_char_pos = blk_char_pos + block_no * sb->s_blocksize;
+    memcpy(sb->s_bdev + blk_char_pos, stream, size);
+    return size;
+}
+
+size_t read_block(struct super_block *sb, unsigned long block_no, char *stream, size_t size) {
+    unsigned long blk_char_pos = sb->s_blocksize * (sb->s_bitmap_blks + 1);
+
+    if (test_block_free_by_inode_num(block_no, sb)) {
+        printf("use a free block!\n");
+        exit(1);
+    }
+    blk_char_pos = blk_char_pos + block_no * sb->s_blocksize;
+    memcpy(stream, sb->s_bdev + blk_char_pos, size);
+    return size;
 }

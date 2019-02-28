@@ -13,6 +13,7 @@
 
 #define INSTR_MAX_LEN 50
 #define LINE_MAX_LEN 2048
+#define DEFAULT_FILE_BLK 64
 
 enum INSTR_TYPE {
     __shutdown, __swap_user, __list_file, __rename_file,
@@ -37,6 +38,8 @@ void print_slist(slist *sl);
 bool mkdir_handle(struct dentry *parent_dir, const char *dir_name, struct usr_ptr *user, struct super_block *sb);
 bool rename_handle(struct dentry *parent_dir, const char *dir_name, const char *new_name);
 bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user);
+bool edit_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user);
+bool cat_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user);
 
 void str_get_priority(struct inode *inode1, char *buf);
 unsigned long priority_get_by_usr(struct usr_ptr *user);

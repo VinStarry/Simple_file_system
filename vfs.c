@@ -123,6 +123,18 @@ int main(int argc, const char *argv[]) {
                 else
                     type_instr = __error_instr;
                 break;
+            case __edit_file:
+                if (sscanf(line, "%s%s", input_usr_name, redundent) == 2)
+                    edit_handle(current_dir, redundent, sb, current_usr);
+                else
+                    type_instr = __error_instr;
+                break;
+            case __cat_file:
+                if (sscanf(line, "%s%s", input_usr_name, redundent) == 2)
+                    cat_handle(current_dir, redundent, sb, current_usr);
+                else
+                    type_instr = __error_instr;
+                break;
             case __error_instr:
                 break;
             default:
