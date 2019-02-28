@@ -395,65 +395,82 @@ bool rename_handle(struct dentry *parent_dir, const char *dir_name, const char *
     return true;
 }
 
-bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb) {
+bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user) {
     struct dentry *target_dir = search_by_str(parent_dir, dir_name);
     if (target_dir == NULL) {
         printf("file doesn't exist\n");
         return false;
     }
-    else if (target_dir->type == __directory){
-        size_t num = 0;
-
-        for (int i = 0; i < HASH_TABLE_ROW; i++) {
-            struct dir_hash_table *ptr = target_dir->subdirs[i];
-            while (ptr->next) {
-                ptr = ptr->next;
-                if (!strcmp(ptr->dname, ".") || !strcmp(ptr->dname, ".."))
-                    continue;
-                num++;
-            }
-        }
-
-        if (num > 0) {
-            printf("rm: %s: is a directory\n", dir_name);
+    else {
+        unsigned long prio = user->priority;
+        if (!permit(target_dir->d_inode->mode, prio)) {
+            printf("permission denied!\n");
             return false;
         }
+        if (target_dir->type == __directory){
+            size_t num = 0;
 
-        else {
-            hash_table_delete(parent_dir, target_dir);
             for (int i = 0; i < HASH_TABLE_ROW; i++) {
-                struct dir_hash_table *ptr = target_dir->subdirs[i], *prev;
-                while (ptr) {
-                    prev = ptr;
-                    if (prev->dname) {
-                        if (!strcmp(prev->dname, ".."))
-                            prev->corres_dentry->parent->d_inode->i_nlink--;
-                        else if (!strcmp(prev->dname, "."))
-                            prev->corres_dentry->d_inode->i_nlink--;
-                        free(prev->dname);
-                    }
+                struct dir_hash_table *ptr = target_dir->subdirs[i];
+                while (ptr->next) {
                     ptr = ptr->next;
-                    free(prev);
-                    prev = NULL;
+                    if (!strcmp(ptr->dname, ".") || !strcmp(ptr->dname, ".."))
+                        continue;
+                    num++;
                 }
             }
+
+            if (num > 0) {
+                printf("rm: %s: is a directory\n", dir_name);
+                return false;
+            }
+
+            else {
+                hash_table_delete(parent_dir, target_dir);
+                for (int i = 0; i < HASH_TABLE_ROW; i++) {
+                    struct dir_hash_table *ptr = target_dir->subdirs[i], *prev;
+                    while (ptr) {
+                        prev = ptr;
+                        if (prev->dname) {
+                            if (!strcmp(prev->dname, ".."))
+                                prev->corres_dentry->parent->d_inode->i_nlink--;
+                            else if (!strcmp(prev->dname, "."))
+                                prev->corres_dentry->d_inode->i_nlink--;
+                            free(prev->dname);
+                        }
+                        ptr = ptr->next;
+                        free(prev);
+                        prev = NULL;
+                    }
+                }
+                if (target_dir->d_inode->i_nlink == 0) {
+                    free_block_for_inode(sb, target_dir->d_inode);
+                }
+                free(target_dir);
+            }
+        }
+        else if (target_dir->type == __file){
+            hash_table_delete(parent_dir, target_dir);
+            free(target_dir->subdirs);
             if (target_dir->d_inode->i_nlink == 0) {
                 free_block_for_inode(sb, target_dir->d_inode);
             }
             free(target_dir);
         }
-    }
-    else if (target_dir->type == __file){
-        hash_table_delete(parent_dir, target_dir);
-        free(target_dir->subdirs);
-        if (target_dir->d_inode->i_nlink == 0) {
-            free_block_for_inode(sb, target_dir->d_inode);
+        else {
+            printf("there are some problems with rm_handle()\n");
+            return false;
         }
-        free(target_dir);
-    }
-    else {
-        printf("there are some problems with rm_handle()\n");
-        return false;
     }
     return true;
+}
+
+bool permit(u_mode_t f_mode, unsigned long priority) {
+    const unsigned long a_mask = 0x01;
+    unsigned long shift = 1 + priority * 3;
+    unsigned long temp = (a_mask << shift) & f_mode;
+    if ((temp >> shift) == a_mask) {
+        return true;
+    }
+    return false;
 }

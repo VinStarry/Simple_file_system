@@ -12,12 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6983b98-6e25-4e17-94dd-bf1622336a58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vfs.dir/src/instruction_handle.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/vfs.dir/vfs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/vfs.dir/vfs.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/instruction_handle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/instruction_handle.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instruction_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction_handle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vfs" beforeDir="false" afterPath="$PROJECT_DIR$/vfs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vfs.c" beforeDir="false" afterPath="$PROJECT_DIR$/vfs.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -34,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vfs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="120" column="45" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
+            <state relative-caret-position="132">
+              <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#377#415#0" expanded="true" />
@@ -47,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+            <state relative-caret-position="402">
+              <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
               <folding>
                 <element signature="e#110#129#0" expanded="true" />
               </folding>
@@ -59,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="448" column="5" lean-forward="true" selection-start-line="448" selection-start-column="5" selection-end-line="448" selection-end-column="5" />
+            <state relative-caret-position="392">
+              <caret line="469" column="4" lean-forward="true" selection-start-line="469" selection-start-column="4" selection-end-line="469" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -80,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dentry.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+            <state relative-caret-position="-4688">
               <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
               <folding>
                 <element signature="e#3547#4047#0" />
@@ -112,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/super_block.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2440">
+            <state relative-caret-position="-8">
               <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
               <folding>
                 <element signature="e#135#2553#0" />
@@ -198,6 +194,7 @@
       <find>test_bit</find>
       <find>test_block_free_by_inode_num</find>
       <find>mkdir_han</find>
+      <find>unknown</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,8 +223,8 @@
         <option value="$PROJECT_DIR$/include/inode.h" />
         <option value="$PROJECT_DIR$/src/inode.c" />
         <option value="$PROJECT_DIR$/src/super_block.c" />
-        <option value="$PROJECT_DIR$/include/instruction_handle.h" />
         <option value="$PROJECT_DIR$/vfs.c" />
+        <option value="$PROJECT_DIR$/include/instruction_handle.h" />
         <option value="$PROJECT_DIR$/src/instruction_handle.c" />
       </list>
     </option>
@@ -322,7 +319,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99263000" />
+    <option name="totallyTimeSpent" value="100118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -389,11 +386,21 @@
         <watch expression="((struct dentry *)q-&gt;front-&gt;val)-&gt;d_inode-&gt;i_no" language="ObjectiveC" />
         <watch expression="(struct dentry *)q-&gt;front-&gt;val" language="ObjectiveC" />
         <watch expression="new_dir-&gt;d_inode" language="ObjectiveC" />
+        <watch expression="text_dir" language="ObjectiveC" />
+        <watch expression="input_usr_name" language="ObjectiveC" />
+        <watch expression="redundent" language="ObjectiveC" />
+        <watch expression="line" language="ObjectiveC" />
+        <watch expression="num" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>num</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>((struct dentry *)q-&gt;front-&gt;val)-&gt;d_inode-&gt;i_no</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -436,11 +443,6 @@
       </expression>
       <expression>
         <expression-string>hash_val</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>temp_save</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -521,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trival_helper.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/inode.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -545,9 +540,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/trival_helper.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/super_block.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2440">
+        <state relative-caret-position="-8">
           <caret line="232" column="28" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
           <folding>
             <element signature="e#135#2553#0" />
@@ -569,7 +571,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dentry.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="-4688">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
             <element signature="e#3547#4047#0" />
@@ -607,20 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
-          <folding>
-            <element signature="e#110#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vfs.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="120" column="45" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
+        <state relative-caret-position="132">
+          <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#377#415#0" expanded="true" />
@@ -628,10 +620,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+          <folding>
+            <element signature="e#110#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="448" column="5" lean-forward="true" selection-start-line="448" selection-start-column="5" selection-end-line="448" selection-end-column="5" />
+        <state relative-caret-position="392">
+          <caret line="469" column="4" lean-forward="true" selection-start-line="469" selection-start-column="4" selection-end-line="469" selection-end-column="4" />
         </state>
       </provider>
     </entry>

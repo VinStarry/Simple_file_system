@@ -36,9 +36,10 @@ void free_slist(slist **sl);
 void print_slist(slist *sl);
 bool mkdir_handle(struct dentry *parent_dir, const char *dir_name, struct usr_ptr *user, struct super_block *sb);
 bool rename_handle(struct dentry *parent_dir, const char *dir_name, const char *new_name);
-bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb);
+bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_block *sb, struct usr_ptr *user);
 
 void str_get_priority(struct inode *inode1, char *buf);
 unsigned long priority_get_by_usr(struct usr_ptr *user);
+bool permit(u_mode_t f_mode, unsigned long priority);
 
 #endif //VFS_INSTRUCTION_HANDLE_H

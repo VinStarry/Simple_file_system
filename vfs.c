@@ -119,7 +119,7 @@ int main(int argc, const char *argv[]) {
                 break;
             case __remove_file:
                 if (sscanf(line, "%s%s", input_usr_name, redundent) == 2)
-                    rm_handle(current_dir, redundent, sb);
+                    rm_handle(current_dir, redundent, sb, current_usr);
                 else
                     type_instr = __error_instr;
                 break;
