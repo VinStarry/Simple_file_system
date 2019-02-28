@@ -68,7 +68,8 @@ bool save_entry(struct dentry *root, struct super_block *sb) {
     }
 
     while (!queue_empty(q)) {
-        fprintf(fp, "%d\n%lu %c\n", q->front->aux, ((struct dentry *)q->front->val)->d_inode->i_no, ((struct dentry *)q->front->val)->type);
+        fprintf(fp, "%d\n%lu %c %lu\n", q->front->aux, ((struct dentry *)q->front->val)->d_inode->i_no, ((struct dentry *)q->front->val)->type,
+                ((struct dentry *)q->front->val)->d_inode->i_uid);
 
         put_inode_memory_by_num(((struct dentry *)q->front->val)->d_inode, sb);
 
@@ -93,7 +94,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
     if (root->d_inode == NULL) {
         root->d_inode = (struct inode *) malloc(sizeof(struct inode));
     }
-    fscanf(fp, "%d\n%lu %c\n", &level, &root->d_inode->i_no, &root->type);
+    fscanf(fp, "%d\n%lu %c %lu\n", &level, &root->d_inode->i_no, &root->type, &root->d_inode->i_uid);
 
     get_inode_memory_by_num(root->d_inode, sb);
 
@@ -108,7 +109,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
         struct dentry *parent_dir = get_rear_queue(q);
         struct dentry *new_dir = (struct dentry *)malloc(sizeof(struct dentry));
         new_dir->d_inode = (struct inode *)malloc(sizeof(struct inode));
-        if (3 != fscanf(fp, "%d\n%lu %c\n", &level, &new_dir->d_inode->i_no, &new_dir->type)) {
+        if (4 != fscanf(fp, "%d\n%lu %c %lu\n", &level, &new_dir->d_inode->i_no, &new_dir->type, &new_dir->d_inode->i_uid)) {
             free(new_dir);
             break;
         }
