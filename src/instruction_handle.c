@@ -113,7 +113,6 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
         rtn = __swap_user;
     else if (!strcmp(instr, "ls"))
         rtn = __list_file;
-        // todo:
     else if (!strcmp(instr, "mkdir"))
         rtn = __make_directory;
     else if (!strcmp(instr, "chmod"))
@@ -123,7 +122,6 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
         rtn = __hard_link;
     else if (!strcmp(instr, "cd"))
         rtn = __change_directory;
-        // todo:
     else if (!strcmp(instr, "rename"))
         rtn = __rename_file;
         // todo:
@@ -384,4 +382,18 @@ unsigned long priority_get_by_usr(struct usr_ptr *user) {
         return priority_get_by_number(771);
     else
         return priority_get_by_number(777);
+}
+
+bool rename_handle(struct dentry *parent_dir, const char *dir_name, const char *new_name) {
+    struct dentry *current_dir = search_by_str(parent_dir, dir_name);
+    if (current_dir == NULL) {
+        printf("file doesn't exist!\n");
+        return false;
+    }
+    else {
+        hash_table_delete(parent_dir, current_dir);
+        strcpy(current_dir->d_iname, new_name);
+        hash_table_insert(parent_dir, current_dir);
+    }
+    return true;
 }

@@ -111,6 +111,12 @@ int main(int argc, const char *argv[]) {
                 else
                     type_instr = __error_instr;
                 break;
+            case __rename_file:
+                if (sscanf(line, "%s%s%s", text_dir, input_usr_name, redundent) == 3)
+                    rename_handle(current_dir, input_usr_name, redundent);
+                else
+                    type_instr = __error_instr;
+                break;
             case __error_instr:
                 break;
             default:

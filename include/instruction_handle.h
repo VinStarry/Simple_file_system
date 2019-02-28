@@ -35,6 +35,7 @@ bool str_in_slists(slist *sl, char *str);
 void free_slist(slist **sl);
 void print_slist(slist *sl);
 bool mkdir_handle(struct dentry *parent_dir, const char *dir_name, struct usr_ptr *user, struct super_block *sb);
+bool rename_handle(struct dentry *parent_dir, const char *dir_name, const char *new_name);
 
 void str_get_priority(struct inode *inode1, char *buf);
 unsigned long priority_get_by_usr(struct usr_ptr *user);
