@@ -16,5 +16,6 @@ void print_time(struct tm* lt);
 bool test_bit_char(char byte, int num);
 char fill_bit_char(char byte, int num);
 char release_bit_char(char byte, int num);
+unsigned int priority_get_by_number(int num);
 
 #endif //VFS_TRIVAL_HELPER_H

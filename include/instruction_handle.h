@@ -16,7 +16,7 @@
 enum INSTR_TYPE {
     __shutdown, __swap_user, __list_file, __copy_file,
     __hard_link, __change_directory, __move_file, __remove_file,
-    __edit_file, __stdout_clear, __make_directory,
+    __edit_file, __stdout_clear, __make_directory,  __change__mode,
     __error_instr,
 };
 
@@ -25,6 +25,7 @@ typedef int instr_type;
 instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]);
 void ls_handle(struct dentry *dentry, struct dentry *begin_dentry, char option);
 struct dentry *cd_handle(struct dentry *dentry, const char *path);
+void chmod_handle(struct dentry *cur_dir, unsigned int mode_num, char *name);
 
 slist *init_slist(void);
 void insert_slist(slist *sl, char *str, char type);

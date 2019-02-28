@@ -116,6 +116,8 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
     // todo:
     else if (!strcmp(instr, "mkdir"))
         rtn = __make_directory;
+    else if (!strcmp(instr, "chmod"))
+        rtn = __change__mode;
     // todo:
     else if (!strcmp(instr, "cp"))
         rtn = __copy_file;
@@ -261,4 +263,8 @@ struct dentry *cd_handle(struct dentry *dentry, const char *path) {
     return temp;
 }
 
+void chmod_handle(struct dentry *cur_dir, unsigned int mode_num, char *name) {
+    struct dentry *rtn = search_by_str(cur_dir, name);
+    rtn->d_inode->mode = priority_get_by_number(mode_num);
+}
 

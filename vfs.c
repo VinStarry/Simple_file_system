@@ -80,6 +80,7 @@ int main(int argc, const char *argv[]) {
         char input_usr_name[USER_NAME_MAX_LEN];
         char redundent[LINE_MAX_LEN];
         char option[LINE_MAX_LEN];
+        unsigned int input_mode;
 
         printf("\x1b[32m""%s@vfs\t""\x1b[0m", current_usr->name);
         get_current_path_str(current_dir, text_dir);
@@ -94,13 +95,22 @@ int main(int argc, const char *argv[]) {
                 endSignal = true;
                 printf("System shut down by user :%s\n", current_usr->name);
                 break;
+            case __change__mode:
+                if (!strcmp(current_usr->name, "root")) {
+                    if (sscanf(line, "%s%s%u", input_usr_name, input_usr_name, &input_mode) == 3)
+                        chmod_handle(current_dir, input_mode, init_user_name);
+                    else
+                        type_instr = __error_instr;
+                }
+                else {
+                    printf("permission denied!\n");
+                }
+                break;
             case __swap_user:
                 if (sscanf(line, "%s%s%s", input_usr_name, input_usr_name, redundent) == 2) {
                     if (get_user_by_name(head, current_usr, input_usr_name) == true)
                         current_dir = change_home_dir(usr_dir_list, current_usr);
                 }
-                break;
-            case __error_instr:
                 break;
             case __stdout_clear:
                 system("clear");
@@ -118,6 +128,8 @@ int main(int argc, const char *argv[]) {
                     current_dir = cd_handle(current_dir, redundent);
                 else
                     type_instr = __error_instr;
+                break;
+            case __error_instr:
                 break;
             default:
                 printf("Some unknown error occurs!\n");

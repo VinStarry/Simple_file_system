@@ -10,7 +10,7 @@
 
 typedef unsigned uid_t;
 typedef unsigned long blkcnt_t;
-typedef unsigned short u_mode_t;
+typedef unsigned int u_mode_t;
 
 #include "trival_helper.h"
 #include "user.h"

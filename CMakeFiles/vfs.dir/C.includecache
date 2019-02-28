@@ -74,6 +74,10 @@ string.h
 ../include/dentry.h
 /Users/yongxinxu/Desktop/Projects/vfs/include/dentry.h
 
+/Users/yongxinxu/Desktop/Projects/vfs/src/inode.c
+../include/inode.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/inode.h
+
 /Users/yongxinxu/Desktop/Projects/vfs/src/instruction_handle.c
 ../include/instruction_handle.h
 /Users/yongxinxu/Desktop/Projects/vfs/include/instruction_handle.h
@@ -81,6 +85,10 @@ string.h
 /Users/yongxinxu/Desktop/Projects/vfs/src/super_block.c
 ../include/super_block.h
 /Users/yongxinxu/Desktop/Projects/vfs/include/super_block.h
+
+/Users/yongxinxu/Desktop/Projects/vfs/src/trival_helper.c
+../include/trival_helper.h
+/Users/yongxinxu/Desktop/Projects/vfs/include/trival_helper.h
 
 /Users/yongxinxu/Desktop/Projects/vfs/vfs.c
 stdio.h
