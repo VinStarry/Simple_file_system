@@ -14,7 +14,6 @@
     <list default="true" id="b6983b98-6e25-4e17-94dd-bf1622336a58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/include/instruction_handle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/instruction_handle.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instruction_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction_handle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vfs.c" beforeDir="false" afterPath="$PROJECT_DIR$/vfs.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -44,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
-              <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
               <folding>
                 <element signature="e#110#129#0" expanded="true" />
               </folding>
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="469" column="4" lean-forward="true" selection-start-line="469" selection-start-column="4" selection-end-line="469" selection-end-column="4" />
+            <state relative-caret-position="432">
+              <caret line="480" column="20" lean-forward="true" selection-start-line="480" selection-start-column="20" selection-end-line="480" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -319,7 +318,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100118000" />
+    <option name="totallyTimeSpent" value="100669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -623,7 +622,7 @@
     <entry file="file://$PROJECT_DIR$/include/instruction_handle.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
-          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding>
             <element signature="e#110#129#0" expanded="true" />
           </folding>
@@ -632,8 +631,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/instruction_handle.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="469" column="4" lean-forward="true" selection-start-line="469" selection-start-column="4" selection-end-line="469" selection-end-column="4" />
+        <state relative-caret-position="432">
+          <caret line="480" column="20" lean-forward="true" selection-start-line="480" selection-start-column="20" selection-end-line="480" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -40,6 +40,7 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
 
 void str_get_priority(struct inode *inode1, char *buf);
 unsigned long priority_get_by_usr(struct usr_ptr *user);
-bool permit(u_mode_t f_mode, unsigned long priority);
+bool permit_write(u_mode_t f_mode, unsigned long priority);
+bool permit_read(u_mode_t f_mode, unsigned long priority);
 
 #endif //VFS_INSTRUCTION_HANDLE_H

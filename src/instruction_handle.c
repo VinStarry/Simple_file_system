@@ -121,7 +121,6 @@ instr_type raw_instruction_handle(char instr[INSTR_MAX_LEN]) {
         rtn = __change_directory;
     else if (!strcmp(instr, "rename"))
         rtn = __rename_file;
-        // todo:
     else if (!strcmp(instr, "rm"))
         rtn = __remove_file;
         // todo:
@@ -464,9 +463,19 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
     return true;
 }
 
-bool permit(u_mode_t f_mode, unsigned long priority) {
+bool permit_write(u_mode_t f_mode, unsigned long priority) {
     const unsigned long a_mask = 0x01;
     unsigned long shift = 1 + priority * 3;
+    unsigned long temp = (a_mask << shift) & f_mode;
+    if ((temp >> shift) == a_mask) {
+        return true;
+    }
+    return false;
+}
+
+bool permit_read(u_mode_t f_mode, unsigned long priority) {
+    const unsigned long a_mask = 0x01;
+    unsigned long shift = 2 + priority * 3;
     unsigned long temp = (a_mask << shift) & f_mode;
     if ((temp >> shift) == a_mask) {
         return true;
