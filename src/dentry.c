@@ -95,7 +95,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
     }
     fscanf(fp, "%d\n%lu %c\n", &level, &root->d_inode->i_no, &root->type);
 
-    get_inode_memory_by_num(root->d_inode, sb);
+//    get_inode_memory_by_num(root->d_inode, sb);
 
     root->d_time = (struct tm *)malloc(sizeof(struct tm));
     fread(root->d_time, sizeof(struct tm), 1, fp);
@@ -113,7 +113,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
             break;
         }
         else {
-            get_inode_memory_by_num(new_dir->d_inode, sb);
+//            get_inode_memory_by_num(new_dir->d_inode, sb);
             new_dir->d_time = (struct tm *)malloc(sizeof(struct tm));
             fread(new_dir->d_time, sizeof(struct tm), 1, fp);
             fscanf(fp, "%s\n", new_dir->d_iname);
@@ -137,7 +137,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
             new_dir_self->type = __link;
             strcpy(new_dir_self->d_iname, ".");
             new_dir_self->d_inode = new_dir->d_inode;
-            new_dir->d_inode->i_nlink++;
+
             hash_table_insert(new_dir, new_dir_self);
 
             hash_table_insert(parent_dir, new_dir);
@@ -147,7 +147,7 @@ bool load_entry(struct dentry *root, struct super_block *sb) {
             new_dir_parent->type = __link;
             strcpy(new_dir_parent->d_iname, "..");
             new_dir_parent->d_inode = parent_dir->d_inode;
-            new_dir_parent->d_inode->i_nlink++;
+
             hash_table_insert(new_dir, new_dir_parent);
         }
     }
