@@ -451,7 +451,6 @@ bool rm_handle(struct dentry *parent_dir, const char *dir_name, struct super_blo
         }
         else if (target_dir->type == __file){
             hash_table_delete(parent_dir, target_dir);
-            free(target_dir->subdirs);
             if (target_dir->d_inode->i_nlink == 0) {
                 free_block_for_inode(sb, target_dir->d_inode);
             }
