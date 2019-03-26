@@ -256,9 +256,7 @@ struct dir_hash_table {
 | **3**        | lion       | lion123456 | 1      |
 | **4**        | guest      | none       | 2      |
 
-ls -l的第一列显示的权限信息，如下图。(不同于Linux的user、group和所有用户，本系统中rwxrwxrwx分别表示了第0级用户，第1级用户和第2级用户的权限)。
-
-![image-20190326190354561](/Users/yongxinxu/Library/Application Support/typora-user-images/image-20190326190354561.png)
+ls -l的第一列显示的权限信息，不同于Linux的user、group和所有用户，本系统中rwxrwxrwx分别表示了第0级用户，第1级用户和第2级用户的权限。
 
 # 支持的指令
 
