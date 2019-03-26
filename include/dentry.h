@@ -26,16 +26,16 @@ struct __dentry_with_level {
     int level;
 };
 
-bool save_entry(struct dentry *root, struct super_block *sb);
-bool load_entry(struct dentry *root, struct super_block *sb);
-struct dir_hash_table *d_hash(struct dentry *dentry);
-void hash_table_insert(struct dentry *dentry, struct dentry *sub_dentry);
-void hash_table_delete(struct dentry *dentry, struct dentry *sub_dentry);
-struct dentry *search_by_str(struct dentry *current_dentry, const char *dname);
-void packet_user_dlist(dlist *dl, struct user_linked_list *head, struct dentry *root);
-struct dentry *change_home_dir(dlist *dl, struct usr_ptr *current_user);
-void get_current_path_str(struct dentry *dentry, char *str);
-void travel_dentry(queue *q, slist *str_list, struct dentry *begin_dentry, size_t num);
+bool save_entry(struct dentry *root, struct super_block *sb);   // 保存目录项到文件
+bool load_entry(struct dentry *root, struct super_block *sb);   // 从文件读取目录项
+struct dir_hash_table *d_hash(struct dentry *dentry);           // 计算目录项的hash值
+void hash_table_insert(struct dentry *dentry, struct dentry *sub_dentry);   // 插入目录项到哈希表
+void hash_table_delete(struct dentry *dentry, struct dentry *sub_dentry);   // 从哈希表删除目录项
+struct dentry *search_by_str(struct dentry *current_dentry, const char *dname); // 查询hash表
+void packet_user_dlist(dlist *dl, struct user_linked_list *head, struct dentry *root);  // 将目录项与用户名对应
+struct dentry *change_home_dir(dlist *dl, struct usr_ptr *current_user);    // 改变当前路径
+void get_current_path_str(struct dentry *dentry, char *str);    // 得到当前的路径
+void travel_dentry(queue *q, slist *str_list, struct dentry *begin_dentry, size_t num); // 遍历目录项
 
 // initialize queue, allocate memory, return the initialized queue pointer
 queue *init_queue(void);
